@@ -35,6 +35,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import auxiliares.RasterizacaoEnum;
@@ -134,6 +136,7 @@ public class App extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        JMenuItem jMenuItem9 = new javax.swing.JMenuItem();
         menuSobre = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -420,6 +423,7 @@ public class App extends javax.swing.JFrame {
                 openMenuFiltros(evt);
             }
         });
+        
         jMenu2.add(jMenuItem1);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.SHIFT_MASK));
@@ -472,6 +476,17 @@ public class App extends javax.swing.JFrame {
         menuSobre.add(jMenuItem3);
 
         menuBar.add(menuSobre);
+        
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.SHIFT_MASK));
+        jMenuItem9.setText("Morfologia");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openMenuMorfologia(evt);
+            }
+           
+        });
+        
+        jMenu2.add(jMenuItem9);
 
 //        menuBar.add(menuSobre1);
 
@@ -569,6 +584,15 @@ public class App extends javax.swing.JFrame {
 
         changePanelCentral(panelHistograma);
     }//GEN-LAST:event_openMenuEqualizacao
+    
+    private void openMenuMorfologia(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuEqualizacao
+        panelFooter.setVisible(false);
+        panelMenuLeft.setVisible(false);
+        panelBox.removeAll();
+
+        changePanelCentral(panelHistograma);
+    }//GEN-LAST:event_openMenuEqualizacao
+
 
     private void openTrans2D(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openTrans2D
         panelMenuLeft.setVisible(true);
