@@ -1,11 +1,11 @@
 package auxiliares;
 
 /**
- * Mapeia os tipos de algoritmos para rasterizaçao da reta
+ * Mapeia os tipos de algoritmos para rasterizacao da reta
  * 
  */
 public enum RasterizacaoEnum {
-    DDA("DDA (Digital Differential Analyser)"), PONTO_MEDIO("Ponto Médio");
+    DDA("DDA (Digital Differential Analyser)"), PONTO_MEDIO("Ponto Medio");
     
     private final String titulo;
 

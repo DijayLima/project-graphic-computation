@@ -108,7 +108,7 @@ public class PanelFiltros extends javax.swing.JPanel {
 
         lbTitle.setFont(new java.awt.Font("Tahoma", 1, 26)); // NOI18N
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTitle.setText("Filtro da Média");
+        lbTitle.setText("Filtro da Media");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -249,7 +249,7 @@ public class PanelFiltros extends javax.swing.JPanel {
                 btAplicaFiltro.setEnabled(true);
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "OPS! Não foi possivel carregar a imagem.");
+            JOptionPane.showMessageDialog(null, "OPS! Nao foi possivel carregar a imagem.");
         }
     }//GEN-LAST:event_selectImage
 

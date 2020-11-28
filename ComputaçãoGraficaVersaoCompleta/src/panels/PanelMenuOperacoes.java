@@ -5,7 +5,7 @@ import javax.swing.JRadioButton;
 import auxiliares.OperacoesEnum;
 
 /**
- * Representa o menu para manipulação da circunferência
+ * Representa o menu para manipulacao da circunferencia
  *
  */
 public class PanelMenuOperacoes extends javax.swing.JPanel {
@@ -75,12 +75,12 @@ public class PanelMenuOperacoes extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(240, 0));
         setPreferredSize(new java.awt.Dimension(240, 779));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Operações"));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Operacoes"));
 
         buttonGroupFiltros.add(rbAdicao);
         rbAdicao.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         rbAdicao.setSelected(true);
-        rbAdicao.setText("Adição");
+        rbAdicao.setText("Adicao");
         rbAdicao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtrosSelect(evt);
@@ -89,7 +89,7 @@ public class PanelMenuOperacoes extends javax.swing.JPanel {
 
         buttonGroupFiltros.add(rbSubstracao);
         rbSubstracao.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        rbSubstracao.setText("Substração");
+        rbSubstracao.setText("Substracao");
         rbSubstracao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtrosSelect(evt);
@@ -98,7 +98,7 @@ public class PanelMenuOperacoes extends javax.swing.JPanel {
 
         buttonGroupFiltros.add(rbMultiplicacao);
         rbMultiplicacao.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        rbMultiplicacao.setText("Multiplicação");
+        rbMultiplicacao.setText("Multiplicacao");
         rbMultiplicacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtrosSelect(evt);
@@ -107,7 +107,7 @@ public class PanelMenuOperacoes extends javax.swing.JPanel {
 
         buttonGroupFiltros.add(rbDivisao);
         rbDivisao.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        rbDivisao.setText("Divisão");
+        rbDivisao.setText("Divisao");
         rbDivisao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtrosSelect(evt);
@@ -203,7 +203,7 @@ public class PanelMenuOperacoes extends javax.swing.JPanel {
 
     private void filtrosSelect(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtrosSelect
         JRadioButton radio = (JRadioButton) evt.getSource();
-        PanelOperacoes.getInstance().setTitle("Operação de " + radio.getText());
+        PanelOperacoes.getInstance().setTitle("Operacao de " + radio.getText());
         PanelOperacoes.panelImgOutput.repaint();
     }//GEN-LAST:event_filtrosSelect
 

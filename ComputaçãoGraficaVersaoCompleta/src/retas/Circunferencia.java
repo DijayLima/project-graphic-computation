@@ -33,7 +33,7 @@ public class Circunferencia {
     }
 
     /**
-     * Algoritmo da função explicita.
+     * Algoritmo da funcao explicita.
      *
      * @param raio
      * @param cor
@@ -49,7 +49,7 @@ public class Circunferencia {
     }
 
     /**
-     * Algoritmo da função trigonométrica
+     * Algoritmo da funcao trigonometrica
      *
      * @param raio
      * @param cor
@@ -64,7 +64,7 @@ public class Circunferencia {
     }
 
     /**
-     * Algoritmo do ponto médio
+     * Algoritmo do ponto medio
      *
      * @param raio
      * @param cor
@@ -93,7 +93,7 @@ public class Circunferencia {
     }
 
     /**
-     * Algoritmo da função elipse
+     * Algoritmo da funcao elipse
      *
      * @param a
      * @param b

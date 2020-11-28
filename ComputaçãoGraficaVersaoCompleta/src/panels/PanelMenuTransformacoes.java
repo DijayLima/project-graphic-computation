@@ -5,7 +5,7 @@ import javax.swing.JRadioButton;
 import auxiliares.TransformacoesImagemEnum;
 
 /**
- * Representa o menu para manipulação da circunferência
+ * Representa o menu para manipulacao da circunferencia
  *
  */
 public class PanelMenuTransformacoes extends javax.swing.JPanel {
@@ -100,7 +100,7 @@ public class PanelMenuTransformacoes extends javax.swing.JPanel {
             }
         });
 
-        panelConfigGamma.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados para operação"));
+        panelConfigGamma.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados para operacao"));
 
         lbInfor.setText("c = 1 e y = (0 <= y <= 1)");
 
@@ -180,7 +180,7 @@ public class PanelMenuTransformacoes extends javax.swing.JPanel {
 
     private void rbSelect(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSelect
         JRadioButton radio = (JRadioButton) evt.getSource();
-        PanelTranformacoes.getInstance().setTitle("Transformação " + radio.getText());
+        PanelTranformacoes.getInstance().setTitle("Transformacao " + radio.getText());
         PanelTranformacoes.panelImgOutput.removeAll();
         PanelTranformacoes.panelImgOutput.repaint();
         

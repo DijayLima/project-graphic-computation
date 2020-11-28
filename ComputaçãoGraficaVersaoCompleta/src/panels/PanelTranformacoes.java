@@ -97,7 +97,7 @@ public class PanelTranformacoes extends javax.swing.JPanel {
 
         lbTitle.setFont(new java.awt.Font("Tahoma", 1, 26)); // NOI18N
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTitle.setText("Transformação Negativo");
+        lbTitle.setText("Transformacao Negativo");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -135,7 +135,7 @@ public class PanelTranformacoes extends javax.swing.JPanel {
         );
 
         panelImgOutput.setBackground(new java.awt.Color(255, 255, 255));
-        panelImgOutput.setBorder(javax.swing.BorderFactory.createTitledBorder("Imagem de saída"));
+        panelImgOutput.setBorder(javax.swing.BorderFactory.createTitledBorder("Imagem de saida"));
         panelImgOutput.setPreferredSize(new java.awt.Dimension(300, 390));
 
         javax.swing.GroupLayout panelImgOutputLayout = new javax.swing.GroupLayout(panelImgOutput);
@@ -237,7 +237,7 @@ public class PanelTranformacoes extends javax.swing.JPanel {
                 panelImgOutput.repaint();
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "OPS! Não foi possivel carregar a imagem.");
+            JOptionPane.showMessageDialog(null, "OPS! Nao foi possivel carregar a imagem.");
         }
     }//GEN-LAST:event_selectImage
 

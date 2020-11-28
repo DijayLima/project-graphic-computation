@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 import auxiliares.TransformacoesEnum;
 
 /**
- * Representa o menu para manipulação das transformações 3D
+ * Representa o menu para manipulacao das transformacoes 3D
  */
 public final class PanelMenu3D extends javax.swing.JPanel {
 
@@ -282,11 +282,11 @@ public final class PanelMenu3D extends javax.swing.JPanel {
             }
         });
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipos de Transformações"));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipos de Transformacoes"));
 
         buttonGroupAlgoritmos.add(rbTranslacao);
         rbTranslacao.setSelected(true);
-        rbTranslacao.setText("Translação");
+        rbTranslacao.setText("Translacao");
         rbTranslacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbTranslacaoselectedTransformacao(evt);
@@ -294,7 +294,7 @@ public final class PanelMenu3D extends javax.swing.JPanel {
         });
 
         buttonGroupAlgoritmos.add(rbRotacao);
-        rbRotacao.setText("Rotação");
+        rbRotacao.setText("Rotacao");
         rbRotacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbRotacaoselectedTransformacao(evt);
@@ -310,7 +310,7 @@ public final class PanelMenu3D extends javax.swing.JPanel {
         });
 
         buttonGroupAlgoritmos.add(rbReflexao);
-        rbReflexao.setText("Reflexão");
+        rbReflexao.setText("Reflexao");
         rbReflexao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbReflexaoselectedTransformacao(evt);
@@ -435,13 +435,13 @@ public final class PanelMenu3D extends javax.swing.JPanel {
 
         buttonGroupReflexao.add(jRadioButton1);
         jRadioButton1.setSelected(true);
-        jRadioButton1.setText("Reflexão em XY");
+        jRadioButton1.setText("Reflexao em XY");
 
         buttonGroupReflexao.add(jRadioButton2);
-        jRadioButton2.setText("Reflexão em YZ");
+        jRadioButton2.setText("Reflexao em YZ");
 
         buttonGroupReflexao.add(jRadioButton3);
-        jRadioButton3.setText("Reflexão em XZ");
+        jRadioButton3.setText("Reflexao em XZ");
 
         javax.swing.GroupLayout panelDados2Layout = new javax.swing.GroupLayout(panelDados2);
         panelDados2.setLayout(panelDados2Layout);
@@ -467,7 +467,7 @@ public final class PanelMenu3D extends javax.swing.JPanel {
         );
 
         btResolve.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btResolve.setText("Aplicar Transformação");
+        btResolve.setText("Aplicar Transformacao");
         btResolve.setPreferredSize(new java.awt.Dimension(61, 30));
         btResolve.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -475,8 +475,8 @@ public final class PanelMenu3D extends javax.swing.JPanel {
             }
         });
 
-        brAddLista.setText("Adicionar é Lista Trans. Composta");
-        brAddLista.setToolTipText("Adicione as transformações na ordem que desejar. Depois clique em: Aplicar Transformações Compostas...");
+        brAddLista.setText("Adicionar a Lista Trans. Composta");
+        brAddLista.setToolTipText("Adicione as transformacoes na ordem que desejar. Depois clique em: Aplicar Transformacoes Compostas...");
         brAddLista.setMaximumSize(new java.awt.Dimension(151, 23));
         brAddLista.setMinimumSize(new java.awt.Dimension(151, 23));
         brAddLista.setPreferredSize(new java.awt.Dimension(61, 30));
@@ -486,7 +486,7 @@ public final class PanelMenu3D extends javax.swing.JPanel {
             }
         });
 
-        listTransformacoes.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista Para Transformações Compostas"));
+        listTransformacoes.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista Para Transformacoes Compostas"));
         listTransformacoes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         listTransformacoes.setForeground(new java.awt.Color(102, 102, 102));
         listTransformacoes.setModel(modelList);
@@ -500,7 +500,7 @@ public final class PanelMenu3D extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(listTransformacoes);
 
-        btResolveCompostas.setText("Aplicar Transformações Compostas");
+        btResolveCompostas.setText("Aplicar Transformacoes Compostas");
         btResolveCompostas.setMaximumSize(new java.awt.Dimension(151, 23));
         btResolveCompostas.setMinimumSize(new java.awt.Dimension(151, 23));
         btResolveCompostas.setPreferredSize(new java.awt.Dimension(61, 30));
@@ -587,7 +587,7 @@ public final class PanelMenu3D extends javax.swing.JPanel {
         valorDado3.setValue(0D);
 
         if (rbRotacao.isSelected()) {
-            lbDado1.setText("Ãngulo");
+            lbDado1.setText("angulo");
             lbDado2.setVisible(false);
             valorDado2.setVisible(false);
         } else if (rbReflexao.isSelected()) {
@@ -613,15 +613,15 @@ public final class PanelMenu3D extends javax.swing.JPanel {
         valorDado3.setValue(0D);
 
         if (rbRotacao.isSelected()) {
-            lbDado1.setText("Ângulo");
+            lbDado1.setText("angulo");
             lbDado2.setVisible(false);
             lbDado3.setVisible(false);
             valorDado2.setVisible(false);
             valorDado3.setVisible(false);
 
-            jRadioButton1.setText("Rotação em X");
-            jRadioButton2.setText("Rotação em Y");
-            jRadioButton3.setText("Rotação em Z");
+            jRadioButton1.setText("Rotacao em X");
+            jRadioButton2.setText("Rotacao em Y");
+            jRadioButton3.setText("Rotacao em Z");
         } else if (rbReflexao.isSelected()) {
             panelDados1.setVisible(false);
             panelDados2.setVisible(true);
@@ -643,7 +643,7 @@ public final class PanelMenu3D extends javax.swing.JPanel {
         valorDado3.setValue(1D);
 
         if (rbRotacao.isSelected()) {
-            lbDado1.setText("Ângulo");
+            lbDado1.setText("angulo");
             lbDado2.setVisible(false);
             valorDado2.setVisible(false);
         } else if (rbReflexao.isSelected()) {
@@ -669,16 +669,16 @@ public final class PanelMenu3D extends javax.swing.JPanel {
         valorDado3.setValue(0D);
 
         if (rbRotacao.isSelected()) {
-            lbDado1.setText("Ângulo");
+            lbDado1.setText("angulo");
             lbDado2.setVisible(false);
             valorDado2.setVisible(false);
         } else if (rbReflexao.isSelected()) {
             panelDados1.setVisible(false);
             panelDados2.setVisible(true);
 
-            jRadioButton1.setText("Reflexão em XY");
-            jRadioButton2.setText("Reflexão em YZ");
-            jRadioButton3.setText("Reflexão em XZ");
+            jRadioButton1.setText("Reflexao em XY");
+            jRadioButton2.setText("Reflexao em YZ");
+            jRadioButton3.setText("Reflexao em XZ");
         } else {
             lbDado1.setText("X");
             lbDado2.setVisible(true);
@@ -697,7 +697,7 @@ public final class PanelMenu3D extends javax.swing.JPanel {
         valorDado3.setValue(0D);
 
         if (rbRotacao.isSelected()) {
-            lbDado1.setText("Ângulo");
+            lbDado1.setText("angulo");
             lbDado2.setVisible(false);
             valorDado2.setVisible(false);
         } else if (rbReflexao.isSelected()) {
@@ -721,7 +721,7 @@ public final class PanelMenu3D extends javax.swing.JPanel {
         setColor(panelCor.getBackground());
 
         /**
-         * Seta o tipo de algoritmo selecionado e seus parametros necessários
+         * Seta o tipo de algoritmo selecionado e seus parametros necessarios
          */
         if (rbTranslacao.isSelected()) {
             setTipoAlgoritimo(TransformacoesEnum.TRANSLACAO);
@@ -761,7 +761,7 @@ public final class PanelMenu3D extends javax.swing.JPanel {
         }
 
         if (matrizObjeto3D == null) {
-            JOptionPane.showMessageDialog(this.getRootPane(), "Não há objeto no plano cartesiano!\nPor favor, desenhe o objeto primeiro...", "Aplicar Transformação?", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this.getRootPane(), "Nao ha objeto no plano cartesiano!\nPor favor, desenhe o objeto primeiro...", "Aplicar Transformacao?", JOptionPane.WARNING_MESSAGE);
         } else {
             App.runResult(this);
         }
@@ -773,31 +773,31 @@ public final class PanelMenu3D extends javax.swing.JPanel {
          * Seta o tipo de algoritmo selecionado e seus parametros necessÃ¡rios
          */
         if (rbTranslacao.isSelected()) {
-            modelList.addElement("- Translação: Tx=" + valorDado1.getValue() + ", Ty=" + valorDado2.getValue() + ", Tz=" + valorDado3.getValue());
+            modelList.addElement("- Translacao: Tx=" + valorDado1.getValue() + ", Ty=" + valorDado2.getValue() + ", Tz=" + valorDado3.getValue());
             listaDeTransformacoes.push(trans3D.geraMatrizTranslacao((double) valorDado1.getValue(), (double) valorDado2.getValue(), (double) valorDado3.getValue()));
         } else if (rbEscala.isSelected()) {
             modelList.addElement("- Escala: Sx=" + valorDado1.getValue() + ", Sy=" + valorDado2.getValue() + ", Sz=" + valorDado3.getValue());
             listaDeTransformacoes.push(trans3D.geraMatrizEscala((double) valorDado1.getValue(), (double) valorDado2.getValue(), (double) valorDado3.getValue()));
         } else if (rbRotacao.isSelected()) {
             if (jRadioButton1.isSelected()) {
-                modelList.addElement("- Rotação em X, Î˜=" + valorDado1.getValue());
+                modelList.addElement("- Rotacao em X, Î˜=" + valorDado1.getValue());
                 listaDeTransformacoes.push(trans3D.geraMatrizRotacao((double) valorDado1.getValue(), "x"));
             } else if (jRadioButton2.isSelected()) {
-                modelList.addElement("- Rotação em Y, Î˜=" + valorDado1.getValue());
+                modelList.addElement("- Rotacao em Y, Î˜=" + valorDado1.getValue());
                 listaDeTransformacoes.push(trans3D.geraMatrizRotacao((double) valorDado1.getValue(), "y"));
             } else if (jRadioButton3.isSelected()) {
-                modelList.addElement("- Rotação em Z, Î˜=" + valorDado1.getValue());
+                modelList.addElement("- Rotacao em Z, Î˜=" + valorDado1.getValue());
                 listaDeTransformacoes.push(trans3D.geraMatrizRotacao((double) valorDado1.getValue(), "z"));
             }
         } else if (rbReflexao.isSelected()) {
             if (jRadioButton1.isSelected()) {
-                modelList.addElement("- Reflexão em XY");
+                modelList.addElement("- Reflexao em XY");
                 listaDeTransformacoes.push(trans3D.geraMatrizReflexao("xy"));
             } else if (jRadioButton2.isSelected()) {
-                modelList.addElement("- Reflexão em YZ");
+                modelList.addElement("- Reflexao em YZ");
                 listaDeTransformacoes.push(trans3D.geraMatrizReflexao("yz"));
             } else if (jRadioButton3.isSelected()) {
-                modelList.addElement("- Reflexão em XZ");
+                modelList.addElement("- Reflexao em XZ");
                 listaDeTransformacoes.push(trans3D.geraMatrizReflexao("xz"));
             }
         } else if (rbCisalhamento.isSelected()) {
@@ -819,7 +819,7 @@ public final class PanelMenu3D extends javax.swing.JPanel {
             setTipoAlgoritimo(TransformacoesEnum.COMPOSTA);
             App.runResult(this);
         } else {
-            JOptionPane.showMessageDialog(this.getRootPane(), "Você não adicionou nenhum tipo de transformação na lista.\nPor favor, adicione e tente novamente...", "Aplicar Transformações Compostas?", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this.getRootPane(), "Voce nao adicionou nenhum tipo de transformacao na lista.\nPor favor, adicione e tente novamente...", "Aplicar Transformacoes Compostas?", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btResolveCompostasaplicaTransCompostas
 

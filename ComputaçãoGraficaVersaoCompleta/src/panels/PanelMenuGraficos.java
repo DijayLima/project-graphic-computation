@@ -5,7 +5,7 @@ import javax.swing.JRadioButton;
 import auxiliares.GraficosEnum;
 
 /**
- * Representa o menu para manipulação da circunferÃªncia
+ * Representa o menu para manipulacao da circunferÃªncia
  *
  */
 public class PanelMenuGraficos extends javax.swing.JPanel {
@@ -62,7 +62,7 @@ public class PanelMenuGraficos extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(240, 0));
         setPreferredSize(new java.awt.Dimension(240, 779));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipos de Gráicos"));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipos de Graficos"));
 
         buttonGroupFiltros.add(rbColuna);
         rbColuna.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N

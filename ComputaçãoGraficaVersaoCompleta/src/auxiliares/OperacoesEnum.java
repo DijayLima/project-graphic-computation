@@ -4,7 +4,7 @@ package auxiliares;
  *
  */
 public enum OperacoesEnum {
-    ADICAO("Adição"), SUBSTRACAO("Substração"), MULTIPLICACAO("Multiplicação"), 
+    ADICAO("Adicao"), SUBSTRACAO("Substracao"), MULTIPLICACAO("Multiplicacao"), 
     DIVISAO("DivisÃ£o"), OR("OR"), XOR("XOR"), AND("AND");
     
     private final String titulo;

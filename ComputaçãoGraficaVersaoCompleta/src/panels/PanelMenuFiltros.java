@@ -5,7 +5,7 @@ import javax.swing.JRadioButton;
 import auxiliares.FiltrosEnum;
 
 /**
- * Representa o menu para manipulação da circunferência
+ * Representa o menu para manipulacao da circunferencia
  *
  */
 public class PanelMenuFiltros extends javax.swing.JPanel {
@@ -91,7 +91,7 @@ public class PanelMenuFiltros extends javax.swing.JPanel {
         buttonGroupFiltros.add(rbMedia);
         rbMedia.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         rbMedia.setSelected(true);
-        rbMedia.setText("Média");
+        rbMedia.setText("Media");
         rbMedia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtrosSelect(evt);
@@ -109,7 +109,7 @@ public class PanelMenuFiltros extends javax.swing.JPanel {
 
         buttonGroupFiltros.add(rbPassaAlta);
         rbPassaAlta.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        rbPassaAlta.setText("Passa alta básico");
+        rbPassaAlta.setText("Passa alta basico");
         rbPassaAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtrosSelect(evt);
@@ -136,7 +136,7 @@ public class PanelMenuFiltros extends javax.swing.JPanel {
 
         buttonGroupFiltros.add(rbAltoReforco);
         rbAltoReforco.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        rbAltoReforco.setText("Alto Reforço (Hight-Boost)");
+        rbAltoReforco.setText("Alto Reforco (Hight-Boost)");
         rbAltoReforco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtrosSelect(evt);

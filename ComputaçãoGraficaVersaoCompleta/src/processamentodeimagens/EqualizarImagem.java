@@ -22,13 +22,13 @@ public class EqualizarImagem {
         float[][] matrizDeEqualizacao = new float[255][6];
         int[][] matrizResult = new int[width][height];
 
-        // inicializa o nível de cinza e a frequência dos níveis de cinza
+        // inicializa o nivel de cinza e a frequencia dos niveis de cinza
         for (int i = 0; i < matrizDeEqualizacao.length; i++) {
             matrizDeEqualizacao[i][0] = 1000;
             matrizDeEqualizacao[i][1] = 0;
         }
 
-        // Insere os níveis de cinza, incrementando as suas frequências de repetições e calculando rK (valor do pixel / 255)
+        // Insere os niveis de cinza, incrementando as suas frequencias de repeticoes e calculando rK (valor do pixel / 255)
         for (int i = 0; i < matrizResult.length; i++) {
             for (int j = 0; j < matrizResult.length; j++) {
                 matrizDeEqualizacao[imagem[i][j]][0] = imagem[i][j];

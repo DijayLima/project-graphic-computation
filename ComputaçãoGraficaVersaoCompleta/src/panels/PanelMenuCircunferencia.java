@@ -8,7 +8,7 @@ import javax.swing.JColorChooser;
 import auxiliares.CircunferenciaEnum;
 
 /**
- * Representa o menu para manipulação da circunferÃªncia
+ * Representa o menu para manipulacao da circunferÃªncia
  *
  */
 public class PanelMenuCircunferencia extends javax.swing.JPanel {
@@ -94,11 +94,11 @@ public class PanelMenuCircunferencia extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(240, 0));
         setPreferredSize(new java.awt.Dimension(240, 779));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Algoritmos da Circunferência"));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Algoritmos da Circunferencia"));
 
         buttonGroupAlgoritmos.add(rbPontoMedio);
         rbPontoMedio.setSelected(true);
-        rbPontoMedio.setText("Ponto Mêdio");
+        rbPontoMedio.setText("Ponto Medio");
         rbPontoMedio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selecetedAlgoritmo(evt);
@@ -106,7 +106,7 @@ public class PanelMenuCircunferencia extends javax.swing.JPanel {
         });
 
         buttonGroupAlgoritmos.add(rbTrigonometrica);
-        rbTrigonometrica.setText("Trigonométrica");
+        rbTrigonometrica.setText("Trigonometrica");
         rbTrigonometrica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selecetedAlgoritmo(evt);
@@ -114,7 +114,7 @@ public class PanelMenuCircunferencia extends javax.swing.JPanel {
         });
 
         buttonGroupAlgoritmos.add(rbEquacaoExplicita);
-        rbEquacaoExplicita.setText("Equação Expliçita");
+        rbEquacaoExplicita.setText("Equacao Explicita");
         rbEquacaoExplicita.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selecetedAlgoritmo(evt);
@@ -196,7 +196,7 @@ public class PanelMenuCircunferencia extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cor da Circunferência"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cor da Circunferencia"));
 
         panelCor.setBackground(java.awt.Color.blue);
         panelCor.setToolTipText("Click para selecionar uma nova cor");

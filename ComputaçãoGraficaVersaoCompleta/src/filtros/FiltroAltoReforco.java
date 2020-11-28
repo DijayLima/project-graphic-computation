@@ -72,12 +72,12 @@ public class FiltroAltoReforco {
     public BufferedImage run() {
         int matrizImagem[][] = new int[getWidth()][getHeight()];
 
-        // Máscara
+        // Mascara
         // -1/9 -1/9 -1/9
         // -1/9  w/9 -1/9
         // -1/9 -1/9 -1/9
 
-        //na posição atual, faz a soma e divide por 9, o resultado é inserido na posição [i][j]
+        //na posicao atual, faz a soma e divide por 9, o resultado e inserido na posicao [i][j]
 
         for (int i = 1; i < getWidth() - 1; i++) {
             for (int j = 1; j < getHeight() - 1; j++) {

@@ -51,7 +51,7 @@ public class FiltroRoberts {
 
         for (int i = 0; i < getHeight(); i++) {
             for (int j = 0; j < getWidth(); j++) {
-                // Aproximações em X e Y
+                // Aproximacoes em X e Y
                 int aproximacaoX = 0;
                 int aproximacaoY = 0;
 

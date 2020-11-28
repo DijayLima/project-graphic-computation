@@ -6,7 +6,7 @@ import javax.swing.JTextArea;
 import panels.PanelPlanoCartesiano;
 
 /**
- * Classe que impementa os algoritmos de rasterização da reta.
+ * Classe que impementa os algoritmos de rasterizacao da reta.
  *
  */
 public class Rasterizacao {
@@ -32,7 +32,7 @@ public class Rasterizacao {
      * @param pInicial Ponto inicial
      * @param pFinal Ponto Final
      * @param cor Cor da reta
-     * @param textAreaSolution jTextArea para exibir solução
+     * @param textAreaSolution jTextArea para exibir solucao
      */
     public void dda(Ponto pInicial, Ponto pFinal, Color cor, JTextArea textAreaSolution) {
         double x1 = pInicial.getX();
@@ -89,12 +89,12 @@ public class Rasterizacao {
     }
 
     /**
-     * Algoritmo do ponto médio 
+     * Algoritmo do ponto medio 
      *
      * @param pInicial Ponto inicial
      * @param pFinal Ponto Final
      * @param cor Cor da reta
-     * @param textAreaSolution jTextArea para exibir solução
+     * @param textAreaSolution jTextArea para exibir solucao
      */
     public void pontoMedio(Ponto pInicial, Ponto pFinal, Color cor, JTextArea textAreaSolution) {
         int x1 = (int) (pInicial.getX() + pInicial.getZ());
@@ -126,7 +126,7 @@ public class Rasterizacao {
             planoCartesiano.drawPixel((double) x1, (double) y1, cor); // Pinta o primeiro ponto
 //            setSolution(textAreaSolution, x1, y1, ++count, null);
 
-            //Desenha a reta, fazendo o somatório em x e y.
+            //Desenha a reta, fazendo o somatorio em x e y.
             while ((x1 != x2) || (y1 != y2)) {
                 double p = 2 * rozdil;
 
@@ -146,7 +146,7 @@ public class Rasterizacao {
     }
 
 //    /**
-//     * Popula o jTextArea com a solução do problema.
+//     * Popula o jTextArea com a solucao do problema.
 //     *
 //     * @param textAreaSolution
 //     * @param x

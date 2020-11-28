@@ -101,7 +101,7 @@ public class PanelHistorgrama extends javax.swing.JPanel {
 
         lbTitle.setFont(new java.awt.Font("Tahoma", 1, 26)); // NOI18N
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTitle.setText("Equalização da imagem");
+        lbTitle.setText("Equalizacao da imagem");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -279,7 +279,7 @@ public class PanelHistorgrama extends javax.swing.JPanel {
                 panelHistogramaEqua.getGraphics().drawImage(histogramaGrafico.run(), 0, heigth, null);
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "OPS! Nï¿½o foi possivel carregar a imagem.");
+            JOptionPane.showMessageDialog(null, "OPS! Nao foi possivel carregar a imagem.");
         }
     }//GEN-LAST:event_selectImage
 

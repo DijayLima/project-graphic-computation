@@ -42,7 +42,7 @@ import javax.swing.JPanel;
 import auxiliares.RasterizacaoEnum;
 
 /**
- * Representa a tela inicial da aplicação.
+ * Representa a tela inicial da aplicacao.
  *
  */
 public class App extends javax.swing.JFrame {
@@ -143,9 +143,9 @@ public class App extends javax.swing.JFrame {
         menuSobre1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Computação Gráfica - UEPB");
+        setTitle("Computacao Grafica - UEPB");
         setExtendedState(6);
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagensAsserts/NovoLogo.png")));
+      //  setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagensAsserts/NovoLogo.png")));
         setMinimumSize(new java.awt.Dimension(1080, 720));
         setName("framePrincipal"); // NOI18N
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -186,7 +186,7 @@ public class App extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("<html><h3 align=\"center\">Coordenadas<br/>de Saída</h3></html>");
+        jLabel4.setText("<html><h3 align=\"center\">Coordenadas<br/>de Saida</h3></html>");
         jLabel4.setMinimumSize(new java.awt.Dimension(170, 54));
         jLabel4.setOpaque(true);
         jLabel4.setPreferredSize(new java.awt.Dimension(170, 54));
@@ -195,7 +195,7 @@ public class App extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("<html><h3 align=\"center\">Coordenadas<br/>de Normalização</h3></html>");
+        jLabel5.setText("<html><h3 align=\"center\">Coordenadas<br/>de Normalizacao</h3></html>");
         jLabel5.setMinimumSize(new java.awt.Dimension(170, 54));
         jLabel5.setOpaque(true);
         jLabel5.setPreferredSize(new java.awt.Dimension(170, 54));
@@ -364,7 +364,7 @@ public class App extends javax.swing.JFrame {
         jMenu1.add(menuItemReta);
 
         menuItemCircuferencia.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK));
-        menuItemCircuferencia.setText("Circuferência");
+        menuItemCircuferencia.setText("Circuferencia");
         menuItemCircuferencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openMenuCircunferencia(evt);
@@ -383,7 +383,7 @@ public class App extends javax.swing.JFrame {
 
         menuBar.add(jMenu1);
 
-        jMenu3.setText("Transformações");
+        jMenu3.setText("Transformacoes");
 
         menuItem2D.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.SHIFT_MASK));
         menuItem2D.setText("2D");
@@ -427,7 +427,7 @@ public class App extends javax.swing.JFrame {
         jMenu2.add(jMenuItem1);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem5.setText("Operações");
+        jMenuItem5.setText("Operacoes");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openMenuOperacoes(evt);
@@ -445,7 +445,7 @@ public class App extends javax.swing.JFrame {
         jMenu2.add(jMenuItem6);
 
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem7.setText("Transformação");
+        jMenuItem7.setText("Transformacao");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openMenuTransformacoes(evt);
@@ -454,7 +454,7 @@ public class App extends javax.swing.JFrame {
         jMenu2.add(jMenuItem7);
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem8.setText("Equalização/Histograma");
+        jMenuItem8.setText("Equalizacao/Histograma");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openMenuEqualizacao(evt);
@@ -541,7 +541,7 @@ public class App extends javax.swing.JFrame {
 
     private void openMenuFiltros(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuFiltros
         /**
-         * Removendo os panels que não serïão utilizados
+         * Removendo os panels que nao serao utilizados
          */
         panelFooter.setVisible(false);
         panelMenuLeft.setVisible(true);
@@ -635,7 +635,7 @@ public class App extends javax.swing.JFrame {
     }//GEN-LAST:event_openSistemaSolar
 
     /**
-     * Evento disparado toda vez que a tela ï¿½ redimensinada. Seta a resoluï¿½ï¿½oo da
+     * Evento disparado toda vez que a tela e redimensinada. Seta a resolucao da
      * tela atual.
      *
      */
@@ -764,7 +764,7 @@ public class App extends javax.swing.JFrame {
     }
 
     /**
-     * Executa o algoritmo de rasterização da reta
+     * Executa o algoritmo de rasterizacao da reta
      *
      * @param instance Instancia do PanelMenu que o chamou
      */
@@ -783,7 +783,7 @@ public class App extends javax.swing.JFrame {
     }
 
     /**
-     * Processa o pedido vindo da tela de rasterização de reta.
+     * Processa o pedido vindo da tela de rasterizacao de reta.
      *
      * @param menu
      */
@@ -799,7 +799,7 @@ public class App extends javax.swing.JFrame {
     }
 
     /**
-     * Processa o pedido vindo da tela de rasterização de circunferência.
+     * Processa o pedido vindo da tela de rasterizacao de circunferencia.
      *
      * @param menu - Possui o getRaio, getColor, getTipoAlgoritimo
      */
@@ -824,7 +824,7 @@ public class App extends javax.swing.JFrame {
     }
 
     /**
-     * Processa o pedido vindo da tela de transformações 2D.
+     * Processa o pedido vindo da tela de transformacoes 2D.
      *
      * @param menu
      */
@@ -833,19 +833,19 @@ public class App extends javax.swing.JFrame {
             Transformacoes2D trans2D = Transformacoes2D.getInstance();
 
             /**
-             * Matriz objeto original. Ela é atualizada em cada transformação
+             * Matriz objeto original. Ela e atualizada em cada transformacao
              * aplicada.
              */
             double[][] matrizObjeto = PanelMenu2D.matrizObjeto;
 
             /**
-             * Fatores de translação.
+             * Fatores de translacao.
              */
             double tx = PanelMenu2D.matrizObjeto[0][0], ty = PanelMenu2D.matrizObjeto[1][0];
 
             switch (menu.getTipoAlgoritimo()) {
                 case TRANSLACAO:
-                    // Aplica translação
+                    // Aplica translacao
                     matrizObjeto = trans2D.translacao(matrizObjeto, menu.getValorX(), menu.getValorY());
                     break;
                 case ESCALA:
@@ -853,11 +853,11 @@ public class App extends javax.swing.JFrame {
                     matrizObjeto = trans2D.escala(matrizObjeto, menu.getValorX(), menu.getValorY());
                     break;
                 case ROTACAO:
-                    // Aplica rotação de acordo com o ângulo
+                    // Aplica rotacao de acordo com o angulo
                     matrizObjeto = trans2D.rotacao(matrizObjeto, menu.getAngulo());
                     break;
                 case REFLEXAO:
-                    // Aplica reflexão de acordo com o eixo selecionado
+                    // Aplica reflexao de acordo com o eixo selecionado
                     matrizObjeto = trans2D.reflexao(matrizObjeto, menu.getEixo());
                     break;
                 case CISALHAMENTO:
@@ -877,7 +877,7 @@ public class App extends javax.swing.JFrame {
     }
 
     /**
-     * Processa o pedido vindo da tela de transformações 3D.
+     * Processa o pedido vindo da tela de transformacoes 3D.
      *
      * @param menu
      */
@@ -886,19 +886,19 @@ public class App extends javax.swing.JFrame {
             Transformacoes3D trans3D = Transformacoes3D.getInstance();
 
             /**
-             * Matriz objeto original. Ela é atualizada em cada transformação
+             * Matriz objeto original. Ela e atualizada em cada transformacao
              * aplicada.
              */
             double[][] matrizObjeto3D = PanelMenu3D.matrizObjeto3D;
 
             /**
-             * Fatores de translação.
+             * Fatores de translacao.
              */
             double tx = PanelMenu3D.matrizObjeto3D[0][0], ty = PanelMenu3D.matrizObjeto3D[1][0];
 
             switch (menu.getTipoAlgoritimo()) {
                 case TRANSLACAO:
-                    // Aplica translação
+                    // Aplica translacao
                     matrizObjeto3D = trans3D.translacao(matrizObjeto3D, menu.getValorX(), menu.getValorY(), menu.getValorZ());
                     break;
                 case ESCALA:
@@ -906,11 +906,11 @@ public class App extends javax.swing.JFrame {
                     matrizObjeto3D = trans3D.escala(matrizObjeto3D, menu.getValorX(), menu.getValorY(), menu.getValorZ());
                     break;
                 case ROTACAO:
-                    // Aplica rotação de acordo com o ângulo
+                    // Aplica rotacao de acordo com o angulo
                     matrizObjeto3D = trans3D.rotacao(matrizObjeto3D, menu.getAngulo(), menu.getEixo());
                     break;
                 case REFLEXAO:
-                    // Aplica reflexão de acordo com o eixo selecionado
+                    // Aplica reflexao de acordo com o eixo selecionado
                     matrizObjeto3D = trans3D.reflexao(matrizObjeto3D, menu.getEixo());
                     break;
                 case CISALHAMENTO:
@@ -933,7 +933,7 @@ public class App extends javax.swing.JFrame {
     }
 
     /**
-     * Processa o pedido vindo da tela de transformações 2D.
+     * Processa o pedido vindo da tela de transformacoes 2D.
      *
      * @param menu
      */
@@ -942,17 +942,17 @@ public class App extends javax.swing.JFrame {
             TransformacoesImagem transImg = TransformacoesImagem.getInstance();
 
             /**
-             * Matriz objeto original. Ela é atualizada em cada transformação
+             * Matriz objeto original. Ela e atualizada em cada transformacao
              * aplicada.
              */
             Imagem imagem = PanelMenuImagem.imagem;
 
             /**
-             * Fatores de translação.
+             * Fatores de translacao.
              */
             switch (menu.getTipoAlgoritimo()) {
                 case TRANSLACAO:
-                    // Aplica translação
+                    // Aplica translacao
                     transImg.translacao(imagem, menu.getValorX(), menu.getValorY());
                     break;
                 case ESCALA:
@@ -960,11 +960,11 @@ public class App extends javax.swing.JFrame {
                     transImg.escala(imagem, menu.getValorX(), menu.getValorY());
                     break;
                 case ROTACAO:
-                    // Aplica rotação de acordo com o ângulo
+                    // Aplica rotacao de acordo com o angulo
                     transImg.rotacao(imagem, menu.getAngulo());
                     break;
                 case REFLEXAO:
-                    // Aplica reflexão de acordo com o eixo selecionado
+                    // Aplica reflexao de acordo com o eixo selecionado
                     transImg.reflexao(imagem, menu.getEixo());
                     break;
                 case CISALHAMENTO:
@@ -992,11 +992,11 @@ public class App extends javax.swing.JFrame {
                 // Pega a instancia do Plano Cartesiano
                 PanelPlanoCartesiano planoCartesiano = PanelPlanoCartesiano.getInstance();
 
-                // Calcula o dc - Entrada de dispositivo | Será o mesmo que a saída
+                // Calcula o dc - Entrada de dispositivo | Sera o mesmo que a saida
                 int dcx = e.getX() - planoCartesiano.getValorCentroX();
                 int dcy = (e.getY() - planoCartesiano.getValorCentroY()) * -1;
 
-                // Calcula o ndc - Normalização do dispositivo
+                // Calcula o ndc - Normalizacao do dispositivo
                 float ndcx = FuncoesDeNormalizacao.calcularNDCX(planoCartesiano.getLargura(), dcx);
                 float ndcy = FuncoesDeNormalizacao.calcularNDCX(planoCartesiano.getAltura(), dcy);
 

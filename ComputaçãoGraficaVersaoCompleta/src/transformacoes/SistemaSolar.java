@@ -13,7 +13,7 @@ import java.util.List;
 import panels.PanelPlanoCartesiano;
 
 /**
- * Cria animação do sistema solar
+ * Cria animacao do sistema solar
  *
  */
 public final class SistemaSolar {
@@ -80,7 +80,7 @@ public final class SistemaSolar {
      */
     private void desenhaTerra() {
         g.setColor(Color.BLUE);
-        // Posição inicial da terra (200, 0)
+        // Posicao inicial da terra (200, 0)
         terra = new Ellipse2D.Double(centroX - RAIO_TERRA / 2, centroY - RAIO_TERRA / 2, RAIO_TERRA, RAIO_TERRA);
         g.fill(terra);
     }
@@ -98,7 +98,7 @@ public final class SistemaSolar {
     }
 
     private void preparaPonto() {
-        // Pega a lista de pontos da órbita da metade de cima
+        // Pega a lista de pontos da arbita da metade de cima
         for (int i = 200; i >= -200; i--) {
             for (int j = 0; j <= 100; j++) {
                 if (pontoExiste(new Ponto((double) (centroX + i), (double) (centroY + j)), listaDePontos)) {
@@ -107,7 +107,7 @@ public final class SistemaSolar {
             }
         }
 
-        // Pega a lista de pontos da órbita da metade de baixo
+        // Pega a lista de pontos da arbita da metade de baixo
         for (int i = -200; i <= 200; i++) {
             for (int j = 0; j >= -100; j--) {
                 if (pontoExiste(new Ponto((double) (centroX + i), (double) (centroY + j)), listaDePontos)) {
@@ -118,7 +118,7 @@ public final class SistemaSolar {
     }
 
     /**
-     * Aplica a animação da terra dando a volta na orbita
+     * Aplica a animacao da terra dando a volta na orbita
      */
     public void startAnimation() {
         Collections.reverse(pontosOrbita);

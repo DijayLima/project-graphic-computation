@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import auxiliares.Eixo;
 
 /**
- * Métodos para transformações 2D.
+ * Metodos para transformacoes 2D.
  *
  */
 public class Transformacoes2D {
@@ -28,8 +28,8 @@ public class Transformacoes2D {
     }
 
     /**
-     * Aplica translação no objeto passado como parametro e de acordo com os
-     * fatores de translaçãoo.
+     * Aplica translacao no objeto passado como parametro e de acordo com os
+     * fatores de translacao.
      *
      * @param matrizObjeto
      * @param tx
@@ -45,7 +45,7 @@ public class Transformacoes2D {
             // Atualiza matriz objeto global.
             PanelMenu2D.matrizObjeto = matrizResult;
         } catch (Exception e) {
-            System.err.println("Ocorreu um erro na translaçãoo!");
+            System.err.println("Ocorreu um erro na translacao!");
         }
 
         return matrizResult;
@@ -63,14 +63,14 @@ public class Transformacoes2D {
     public double[][] escala(double[][] matrizObjeto, double sx, double sy) {
         double[][] matrizResult = new double[matrizObjeto.length][matrizObjeto[0].length];
 
-        // Fatores de translação.
+        // Fatores de translacao.
         double tx = matrizObjeto[0][0], ty = matrizObjeto[1][0];
 
         try {
-            // (Matriz translação posição inicial) X (Matriz Escala)
+            // (Matriz translacao posicao inicial) X (Matriz Escala)
             matrizM = Matriz.multiplicaMatrizes(geraMatrizTranslacao(tx, ty), geraMatrizEscala(sx, sy));
 
-            // (Matriz M) X (Matriz translação para origem)
+            // (Matriz M) X (Matriz translacao para origem)
             matrizM = Matriz.multiplicaMatrizes(matrizM, geraMatrizTranslacao(-tx, -ty));
 
             // (Matriz M) X (Matriz objeto)
@@ -95,14 +95,14 @@ public class Transformacoes2D {
     public double[][] rotacao(double[][] matrizObjeto, double angulo) {
         double[][] matrizResult = new double[matrizObjeto.length][matrizObjeto[0].length];
 
-        // Fatores de translação.
+        // Fatores de translacao.
         double tx = matrizObjeto[0][0], ty = matrizObjeto[1][0];
 
         try {
-            // (Matriz translação posição inicial) X (Matriz Rotação)
+            // (Matriz translacao posicao inicial) X (Matriz Rotacao)
             matrizM = Matriz.multiplicaMatrizes(geraMatrizTranslacao(tx, ty), geraMatrizRotacao(angulo));
 
-            // (Matriz M) X (Matriz translação para origem)
+            // (Matriz M) X (Matriz translacao para origem)
             matrizM = Matriz.multiplicaMatrizes(matrizM, geraMatrizTranslacao(-tx, -ty));
 
             // (Matriz M) X (Matriz objeto)
@@ -111,14 +111,14 @@ public class Transformacoes2D {
             // Atualiza matriz objeto global.
             PanelMenu2D.matrizObjeto = matrizResult;
         } catch (Exception e) {
-            System.err.println("Ocorreu um erro na rotação!");
+            System.err.println("Ocorreu um erro na rotacao!");
         }
 
         return matrizResult;
     }
 
     /**
-     * Aplica reflexão no objeto passado como parametro, de acordo com o eixo
+     * Aplica reflexao no objeto passado como parametro, de acordo com o eixo
      * escolhido
      *
      * @param matrizObjeto
@@ -152,14 +152,14 @@ public class Transformacoes2D {
     public double[][] cisalhamento(double[][] matrizObjeto, double cx, double cy) {
         double[][] matrizResult = new double[matrizObjeto.length][matrizObjeto[0].length];
 
-        // Fatores de translação.
+        // Fatores de translacao.
         double tx = matrizObjeto[0][0], ty = matrizObjeto[1][0];
 
         try {
-            // (Matriz translação posição inicial) X (Matriz Cisalhamento)
+            // (Matriz translacao posicao inicial) X (Matriz Cisalhamento)
             matrizM = Matriz.multiplicaMatrizes(geraMatrizTranslacao(tx, ty), geraMatrizCisalhamento(cx, cy));
 
-            // (Matriz M) X (Matriz translação para origem)
+            // (Matriz M) X (Matriz translacao para origem)
             matrizM = Matriz.multiplicaMatrizes(matrizM, geraMatrizTranslacao(-tx, -ty));
 
             // (Matriz M) X (Matriz objeto)
@@ -175,7 +175,7 @@ public class Transformacoes2D {
     }
 
     /**
-     * Aplica as operações compostas.
+     * Aplica as operacoes compostas.
      *
      * @param listaDeTransformacoes
      * @param matrizObjeto
@@ -197,18 +197,18 @@ public class Transformacoes2D {
             // Atualiza matriz objeto global.
             PanelMenu2D.matrizObjeto = matrizResult;
         } catch (Exception e) {
-            System.err.println("Ocorreu um erro nas transformações compostas!");
+            System.err.println("Ocorreu um erro nas transformcoes compostas!");
         }
 
         return matrizResult;
     }
 
     /**
-     * Gera matriz de translação.
+     * Gera matriz de translacao.
      *
      * @param tx
      * @param ty
-     * @return double[][] - matriz translação.
+     * @return double[][] - matriz translacao.
      */
     public double[][] geraMatrizTranslacao(double tx, double ty) {
         double[][] matriz = new double[3][3];
@@ -256,10 +256,10 @@ public class Transformacoes2D {
     }
 
     /**
-     * Gera matriz de rotação.
+     * Gera matriz de rotacao.
      *
      * @param angulo
-     * @return double[][] - matriz rotação.
+     * @return double[][] - matriz rotacao.
      */
     public double[][] geraMatrizRotacao(double angulo) {
         double[][] matriz = new double[3][3];
@@ -286,17 +286,17 @@ public class Transformacoes2D {
     }
 
     /**
-     * Gera matriz de reflexão em torno do eixo passado como parametro X, Y ou
+     * Gera matriz de reflexao em torno do eixo passado como parametro X, Y ou
      * XY.
      *
-     * @return double[][] - matriz reflexão.
+     * @return double[][] - matriz reflexao.
      */
     public double[][] geraMatrizReflexao(String eixo) {
         double[][] matriz = new double[3][3];
 
         eixo = eixo.toUpperCase();
 
-        // Rotação em XY
+        // Rotacao em XY
         // Coluna 0
         matriz[0][0] = -1;
         matriz[1][0] = 0;
@@ -312,7 +312,7 @@ public class Transformacoes2D {
         matriz[1][2] = 0;
         matriz[2][2] = 1;
 
-        // Rotação em X
+        // Rotacao em X
         if (eixo.equals(Eixo.X.getValue())) {
             matriz[0][0] = 1;
         } else if (eixo.equals(Eixo.Y.getValue())) {

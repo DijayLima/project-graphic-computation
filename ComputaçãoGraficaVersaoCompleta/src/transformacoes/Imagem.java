@@ -46,7 +46,7 @@ public class Imagem {
      * @param lin Linha
      * @param col Coluna
      * @param pixel Valor do pixel
-     * @return True se sucesso, False caso contrário.
+     * @return True se sucesso, False caso contrario.
      * @throws ArrayIndexOutOfBoundsException
      */
     public boolean addPixel(int lin, int col, int pixel) throws ArrayIndexOutOfBoundsException {
