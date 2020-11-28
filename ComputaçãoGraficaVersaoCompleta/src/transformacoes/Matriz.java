@@ -1,13 +1,13 @@
 package transformacoes;
 
 /**
- * Fornece métodos para operações em matrizes.
+ * Fornece metodos para operacoes em matrizes.
  *
  */
 public class Matriz {
 
     /**
-     * Realiza multiplicação de matriz e retorna uma nova com o resultado.
+     * Realiza multiplicacao de matriz e retorna uma nova com o resultado.
      *
      * @param matrizA
      * @param matrizB

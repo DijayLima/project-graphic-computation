@@ -17,7 +17,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import auxiliares.TransformacoesEnum;
 
 /**
- * Representa o menu para manipulação das transformações de imagem.
+ * Representa o menu para manipulacao das transformacoes de imagem.
  */
 public final class PanelMenuImagem extends javax.swing.JPanel {
 
@@ -147,11 +147,11 @@ public final class PanelMenuImagem extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(240, 779));
         setPreferredSize(new java.awt.Dimension(240, 779));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipos de Transformações"));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipos de Transformacoes"));
 
         buttonGroupAlgoritmos.add(rbTranslacao);
         rbTranslacao.setSelected(true);
-        rbTranslacao.setText("Translação");
+        rbTranslacao.setText("Translacao");
         rbTranslacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectedTransformacao(evt);
@@ -159,7 +159,7 @@ public final class PanelMenuImagem extends javax.swing.JPanel {
         });
 
         buttonGroupAlgoritmos.add(rbRotacao);
-        rbRotacao.setText("Rotação");
+        rbRotacao.setText("Rotacao");
         rbRotacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectedTransformacao(evt);
@@ -175,7 +175,7 @@ public final class PanelMenuImagem extends javax.swing.JPanel {
         });
 
         buttonGroupAlgoritmos.add(rbReflexao);
-        rbReflexao.setText("Reflexão");
+        rbReflexao.setText("Reflexao");
         rbReflexao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectedTransformacao(evt);
@@ -220,7 +220,7 @@ public final class PanelMenuImagem extends javax.swing.JPanel {
         );
 
         btResolve.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btResolve.setText("Aplicar Transformação");
+        btResolve.setText("Aplicar Transformacao");
         btResolve.setPreferredSize(new java.awt.Dimension(61, 30));
         btResolve.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -285,13 +285,13 @@ public final class PanelMenuImagem extends javax.swing.JPanel {
 
         buttonGroupReflexao.add(jRadioButton1);
         jRadioButton1.setSelected(true);
-        jRadioButton1.setText("Reflexão em X");
+        jRadioButton1.setText("Reflexao em X");
 
         buttonGroupReflexao.add(jRadioButton2);
-        jRadioButton2.setText("Reflexão em Y");
+        jRadioButton2.setText("Reflexao em Y");
 
         buttonGroupReflexao.add(jRadioButton3);
-        jRadioButton3.setText("Reflexão em X e Y");
+        jRadioButton3.setText("Reflexao em X e Y");
 
         javax.swing.GroupLayout panelDados2Layout = new javax.swing.GroupLayout(panelDados2);
         panelDados2.setLayout(panelDados2Layout);
@@ -393,14 +393,14 @@ public final class PanelMenuImagem extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * Aplica a transformação selecionada.
+     * Aplica a transformacao selecionada.
      *
      * @param evt
      */
     private void aplicaTransformacao(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicaTransformacao
 
         /**
-         * Seta o tipo de algoritmo selecionado e seus parametros necessários
+         * Seta o tipo de algoritmo selecionado e seus parametros necessarios
          */
         if (rbTranslacao.isSelected()) {
             setTipoAlgoritimo(TransformacoesEnum.TRANSLACAO);
@@ -431,14 +431,14 @@ public final class PanelMenuImagem extends javax.swing.JPanel {
         }
 
         if (imagem == null) {
-            JOptionPane.showMessageDialog(this.getRootPane(), "Não há imagem no plano cartesiano!\nPor favor, selecione a imagem primeiro...", "Aplicar Transformação?", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this.getRootPane(), "Nao ha imagem no plano cartesiano!\nPor favor, selecione a imagem primeiro...", "Aplicar Transformacao?", JOptionPane.WARNING_MESSAGE);
         } else {
             App.runResult(this);
         }
     }//GEN-LAST:event_aplicaTransformacao
 
     /**
-     * Prepara o menu de acordo com o tipo de transformação selecionada
+     * Prepara o menu de acordo com o tipo de transformacao selecionada
      *
      * @param evt
      */
@@ -450,7 +450,7 @@ public final class PanelMenuImagem extends javax.swing.JPanel {
         valorDado2.setValue(0D);
 
         if (rbRotacao.isSelected()) {
-            lbDado1.setText("Ângulo");
+            lbDado1.setText("angulo");
             lbDado2.setVisible(false);
             valorDado2.setVisible(false);
         } else if (rbReflexao.isSelected()) {
@@ -486,7 +486,7 @@ public final class PanelMenuImagem extends javax.swing.JPanel {
                 PanelPlanoCartesiano.getInstance().drawImage(imagem);
             }
         } catch (HeadlessException e) {
-            JOptionPane.showMessageDialog(null, "OPS! Não foi possivel carregar a imagem.");
+            JOptionPane.showMessageDialog(null, "OPS! Nao foi possivel carregar a imagem.");
         }
     }//GEN-LAST:event_carregarImagem
 

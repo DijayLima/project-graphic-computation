@@ -3,7 +3,7 @@ package panels;
 import transformacoes.SistemaSolar;
 
 /**
- * Representa o menu para manipulação da circunferência
+ * Representa o menu para manipulacao da circunferencia
  *
  */
 public class PanelMenuSistemaSolar extends javax.swing.JPanel {
@@ -42,9 +42,9 @@ public class PanelMenuSistemaSolar extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(240, 0));
         setPreferredSize(new java.awt.Dimension(240, 779));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Opções"));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Opcoes"));
 
-        btStop.setText("Parar Execução");
+        btStop.setText("Parar Execucao");
         btStop.setPreferredSize(new java.awt.Dimension(107, 30));
         btStop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,7 +52,7 @@ public class PanelMenuSistemaSolar extends javax.swing.JPanel {
             }
         });
 
-        btRestart.setText("Reiniciar Execução");
+        btRestart.setText("Reiniciar Execucao");
         btRestart.setEnabled(false);
         btRestart.setPreferredSize(new java.awt.Dimension(107, 30));
         btRestart.addActionListener(new java.awt.event.ActionListener() {

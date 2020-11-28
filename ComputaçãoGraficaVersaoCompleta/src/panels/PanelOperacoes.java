@@ -114,7 +114,7 @@ public class PanelOperacoes extends javax.swing.JPanel {
 
         lbTitle.setFont(new java.awt.Font("Tahoma", 1, 26)); // NOI18N
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTitle.setText("Operacao da Adição");
+        lbTitle.setText("Operacao da Adicao");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -213,7 +213,7 @@ public class PanelOperacoes extends javax.swing.JPanel {
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Resultado da operação");
+        jLabel1.setText("Resultado da operacao");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -291,7 +291,7 @@ public class PanelOperacoes extends javax.swing.JPanel {
                 panelImgOutput.repaint();
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "OPS! Não foi possivel carregar a imagem.");
+            JOptionPane.showMessageDialog(null, "OPS! Nao foi possivel carregar a imagem.");
         }
     }//GEN-LAST:event_selectImage1
 
@@ -340,7 +340,7 @@ public class PanelOperacoes extends javax.swing.JPanel {
                 panelImgOutput.repaint();
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "OPS! Não foi possivel carregar a imagem.");
+            JOptionPane.showMessageDialog(null, "OPS! Nao foi possivel carregar a imagem.");
         }
     }//GEN-LAST:event_selectImage2
 

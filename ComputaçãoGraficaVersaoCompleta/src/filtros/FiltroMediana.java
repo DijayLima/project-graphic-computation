@@ -84,7 +84,7 @@ public class FiltroMediana {
         for (int i = 0; i < getHeight(); i++) {
             for (int j = 0; j < getWidth(); j++) {
 
-                // Array para armazenar os valores dos pixels da vizinhaça
+                // Array para armazenar os valores dos pixels da vizinhaca
                 int[] array = new int[9];
 
                 array[0] += imagem[i][j];

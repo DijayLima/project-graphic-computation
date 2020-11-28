@@ -10,7 +10,7 @@ import javax.swing.JTextArea;
 import auxiliares.RasterizacaoEnum;
 
 /**
- * Representa o menu para manipulação da rasterização de reta
+ * Representa o menu para manipulacao da rasterizacao de reta
  *
  */
 public class PanelMenuRasterizacao extends javax.swing.JPanel {
@@ -103,14 +103,14 @@ public class PanelMenuRasterizacao extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(240, 0));
         setPreferredSize(new java.awt.Dimension(240, 779));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Algoritmos de Rasterização da Reta"));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Algoritmos de Rasterizacao da Reta"));
 
         buttonGroupAlgoritmos.add(rbDDA);
         rbDDA.setSelected(true);
         rbDDA.setText("DDA");
 
         buttonGroupAlgoritmos.add(rbPontoMedio);
-        rbPontoMedio.setText("Ponto Médio");
+        rbPontoMedio.setText("Ponto Medio");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -264,7 +264,7 @@ public class PanelMenuRasterizacao extends javax.swing.JPanel {
        
         textAreaResult.setColumns(20);
         textAreaResult.setRows(5);
-        textAreaResult.setText("Desenvolvido por: \nDijay Lima \nJoão Emanuel\nPedro Henrique");
+        textAreaResult.setText("Desenvolvido por: \nDijay Lima \nJoao Emanuel\nPedro Henrique");
         jScrollPane1.setViewportView(textAreaResult);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -311,7 +311,7 @@ public class PanelMenuRasterizacao extends javax.swing.JPanel {
     }//GEN-LAST:event_openColorChooser
 
     /**
-     * Trata o evento click do botão desenhar reta
+     * Trata o evento click do botao desenhar reta
      *
      * @param evt
      */

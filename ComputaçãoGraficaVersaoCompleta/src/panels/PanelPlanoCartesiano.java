@@ -49,7 +49,7 @@ public class PanelPlanoCartesiano extends JPanel {
     }
 
     /**
-     * Fornece instância do Plano Cartesiano
+     * Fornece instancia do Plano Cartesiano
      *
      * @return
      */
@@ -116,7 +116,7 @@ public class PanelPlanoCartesiano extends JPanel {
     }
 
     /**
-     * Redesenha o plano cartesiano. útil quando se quer apagar os objetos
+     * Redesenha o plano cartesiano. util quando se quer apagar os objetos
      * desenhado nele e desenhar novos.
      */
     public void redesenha() {
@@ -142,14 +142,14 @@ public class PanelPlanoCartesiano extends JPanel {
 
     /**
      * Desenha o pixel no plano cartesiano de acordo com os parametros. OBS. Os
-     * pontos não são normalizados.
+     * pontos nao sao normalizados.
      *
      * @param x - Coordenada x
      * @param y - Coordenada y
      * @param color - Cor do pixel
      */
     public void drawPixel(int x, int y, Color color) {
-        // Pega instância do graphics para desenhar no plano cartesiano
+        // Pega instancia do graphics para desenhar no plano cartesiano
         Graphics g = super.getGraphics();
         g.setColor(color);
         g.fillRect(x, y, 1, 1);
@@ -158,7 +158,7 @@ public class PanelPlanoCartesiano extends JPanel {
 
     /**
      * Desenha o pixel no plano cartesiano de acordo com os parametros. OBS. Os
-     * pontos são normalizados!
+     * pontos sao normalizados!
      *
      * @param x - Coordenada x
      * @param y - Coordenada y
@@ -181,7 +181,7 @@ public class PanelPlanoCartesiano extends JPanel {
     public void drawObjeto2D(double[][] matrizObjeto, Color color) {
         redesenha();
 
-        // Pega instância do graphics para desenhar no plano cartesiano
+        // Pega instancia do graphics para desenhar no plano cartesiano
         Graphics g = this.getGraphics();
         g.setColor(color);
 
@@ -212,7 +212,7 @@ public class PanelPlanoCartesiano extends JPanel {
         Ponto H = new Ponto(matrizObjeto3D[0][7] - fatorCentroCubo, matrizObjeto3D[1][7] - fatorCentroCubo, matrizObjeto3D[2][7] - fatorCentroCubo);
 
         /**
-         * Desenha usando o algoritmo de rasterização do Ponto Médio
+         * Desenha usando o algoritmo de rasterizacao do Ponto Medio
          */
         rast.pontoMedio(A, B, color, null);
         rast.pontoMedio(B, C, color, null);
@@ -275,7 +275,7 @@ public class PanelPlanoCartesiano extends JPanel {
 
     /**
      * Recebe a imagem a ser processada e o AffineTransform contendo as
-     * transformações na imagem e desenha no plano cartesiano.
+     * transformacoes na imagem e desenha no plano cartesiano.
      *
      * @param img
      * @param affineTransform

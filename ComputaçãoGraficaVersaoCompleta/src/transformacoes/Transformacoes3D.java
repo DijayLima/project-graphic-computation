@@ -7,7 +7,7 @@ import java.util.Stack;
 import auxiliares.Eixo;
 
 /**
- * Métodos para transformações 2D
+ * Metodos para transformacoes 2D
  */
 public class Transformacoes3D {
 
@@ -25,8 +25,8 @@ public class Transformacoes3D {
     }
 
     /**
-     * Aplica translação no objeto passado como parametro e de acordo com os
-     * fatores de translação.
+     * Aplica translacao no objeto passado como parametro e de acordo com os
+     * fatores de translacao.
      *
      * @param matrizObjeto
      * @param tx
@@ -43,7 +43,7 @@ public class Transformacoes3D {
             // Atualiza matriz objeto global.
             PanelMenu3D.matrizObjeto3D = matrizResult;
         } catch (Exception e) {
-            System.err.println("Ocorreu um erro na translação!");
+            System.err.println("Ocorreu um erro na translacao!");
         }
 
         return matrizResult;
@@ -62,14 +62,14 @@ public class Transformacoes3D {
     public double[][] escala(double[][] matrizObjeto, double sx, double sy, double sz) {
         double[][] matrizResult = new double[matrizObjeto.length][matrizObjeto[0].length];
 
-        // Fatores de translação.
+        // Fatores de translacao.
         double tx = matrizObjeto[0][0], ty = matrizObjeto[1][0], tz = matrizObjeto[2][0];
 
         try {
-            // (Matriz translação posição inicial) X (Matriz Escala)
+            // (Matriz translacao posicao inicial) X (Matriz Escala)
             matrizM = Matriz.multiplicaMatrizes(geraMatrizTranslacao(tx, ty, tz), geraMatrizEscala(sx, sy, sz));
 
-            // (Matriz M) X (Matriz translação para origem)
+            // (Matriz M) X (Matriz translacao para origem)
             matrizM = Matriz.multiplicaMatrizes(matrizM, geraMatrizTranslacao(-tx, -ty, -tz));
 
             // (Matriz M) X (Matriz objeto)
@@ -95,14 +95,14 @@ public class Transformacoes3D {
     public double[][] rotacao(double[][] matrizObjeto, double angulo, String eixo) {
         double[][] matrizResult = new double[matrizObjeto.length][matrizObjeto[0].length];
 
-        // Fatores de translação.
+        // Fatores de translacao.
         double tx = matrizObjeto[0][0], ty = matrizObjeto[1][0], tz = matrizObjeto[2][0];
 
         try {
-            // (Matriz translação posição inicial) X (Matriz Rotação)
+            // (Matriz translacao posicao inicial) X (Matriz Rotacao)
             matrizM = Matriz.multiplicaMatrizes(geraMatrizTranslacao(tx, ty, tz), geraMatrizRotacao(angulo, eixo));
 
-            // (Matriz M) X (Matriz translação para origem)
+            // (Matriz M) X (Matriz translacao para origem)
             matrizM = Matriz.multiplicaMatrizes(matrizM, geraMatrizTranslacao(-tx, -ty, -tz));
 
             // (Matriz M) X (Matriz objeto)
@@ -111,14 +111,14 @@ public class Transformacoes3D {
             // Atualiza matriz objeto global.
             PanelMenu3D.matrizObjeto3D = matrizResult;
         } catch (Exception e) {
-            System.err.println("Ocorreu um erro na rotação!");
+            System.err.println("Ocorreu um erro na rotacao!");
         }
 
         return matrizResult;
     }
 
     /**
-     * Aplica reflexão no objeto passado como parametro, de acordo com o eixo
+     * Aplica reflexao no objeto passado como parametro, de acordo com o eixo
      * escolhido
      *
      * @param matrizObjeto
@@ -154,14 +154,14 @@ public class Transformacoes3D {
     public double[][] cisalhamento(double[][] matrizObjeto, double a, double b, String eixo) {
         double[][] matrizResult = new double[matrizObjeto.length][matrizObjeto[0].length];
 
-        // Fatores de translação.
+        // Fatores de translacao.
         double tx = matrizObjeto[0][0], ty = matrizObjeto[1][0], tz = matrizObjeto[2][0];
 
         try {
-            // (Matriz translação posição inicial) X (Matriz Cisalhamento)
+            // (Matriz translacao posicao inicial) X (Matriz Cisalhamento)
             matrizM = Matriz.multiplicaMatrizes(geraMatrizTranslacao(tx, ty, tz), geraMatrizCisalhamento(a, b, eixo));
 
-            // (Matriz M) X (Matriz translação para origem)
+            // (Matriz M) X (Matriz translacao para origem)
             matrizM = Matriz.multiplicaMatrizes(matrizM, geraMatrizTranslacao(-tx, -ty, -tz));
 
             // (Matriz M) X (Matriz objeto)
@@ -177,7 +177,7 @@ public class Transformacoes3D {
     }
 
     /**
-     * Aplica as operações compostas.
+     * Aplica as operacoes compostas.
      *
      * @param listaDeTransformacoes
      * @param matrizObjeto
@@ -199,19 +199,19 @@ public class Transformacoes3D {
             // Atualiza matriz objeto global.
             PanelMenu3D.matrizObjeto3D = matrizResult;
         } catch (Exception e) {
-            System.err.println("Ocorreu um erro nas transformações compostas!");
+            System.err.println("Ocorreu um erro nas transformacoes compostas!");
         }
 
         return matrizResult;
     }
 
     /**
-     * Gera matriz de translação.
+     * Gera matriz de translacao.
      *
      * @param tx
      * @param ty
      * @param tz
-     * @return double[][] - matriz translação.
+     * @return double[][] - matriz translacao.
      */
     public double[][] geraMatrizTranslacao(double tx, double ty, double tz) {
         double[][] matriz = new double[4][4];
@@ -277,12 +277,12 @@ public class Transformacoes3D {
     }
 
     /**
-     * Gera matriz de rotação em X, Y ou Z de acordo com o eixo passado como
+     * Gera matriz de rotacao em X, Y ou Z de acordo com o eixo passado como
      * parÃ¢metro.
      *
      * @param angulo
      * @param eixo
-     * @return double[][] - matriz rotação.
+     * @return double[][] - matriz rotacao.
      */
     public double[][] geraMatrizRotacao(double angulo, String eixo) {
         double[][] matriz = new double[4][4];
@@ -292,7 +292,7 @@ public class Transformacoes3D {
 
         eixo = eixo.toUpperCase();
 
-        // Rotação em X
+        // Rotacao em X
         if (eixo.equals(Eixo.X.getValue())) {
             matriz[0][0] = 1;
             matriz[1][0] = 0;
@@ -308,7 +308,7 @@ public class Transformacoes3D {
             matriz[1][2] = -sin;
             matriz[2][2] = cos;
             matriz[3][2] = 0;
-        } // Rotação em Y
+        } // Rotacao em Y
         else if (eixo.equals(Eixo.Y.getValue())) {
             matriz[0][0] = cos;
             matriz[1][0] = 0;
@@ -325,7 +325,7 @@ public class Transformacoes3D {
             matriz[2][2] = cos;
             matriz[3][2] = 0;
         } else {
-            // Rotação em Z
+            // Rotacao em Z
             matriz[0][0] = cos;
             matriz[1][0] = sin;
             matriz[2][0] = 0;
@@ -352,11 +352,11 @@ public class Transformacoes3D {
     }
 
     /**
-     * Gera matriz de reflexão em XY, YZ ou XZ de acordo com o eixo passado como
+     * Gera matriz de reflexao em XY, YZ ou XZ de acordo com o eixo passado como
      * parametro.
      *
      * @param eixo
-     * @return double[][] - matriz rotação.
+     * @return double[][] - matriz rotacao.
      */
     public double[][] geraMatrizReflexao(String eixo) {
         double[][] matriz = new double[4][4];
@@ -364,7 +364,7 @@ public class Transformacoes3D {
         eixo = eixo.toUpperCase();
 
         /**
-         * Rotação em XZ
+         * Rotacao em XZ
          *
          * COLUNA 1
          */

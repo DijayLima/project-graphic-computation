@@ -140,7 +140,7 @@ public class PanelGatoArnold extends javax.swing.JPanel {
         );
 
         panelImgOutput.setBackground(new java.awt.Color(255, 255, 255));
-        panelImgOutput.setBorder(javax.swing.BorderFactory.createTitledBorder("Imagem de saída"));
+        panelImgOutput.setBorder(javax.swing.BorderFactory.createTitledBorder("Imagem de saida"));
         panelImgOutput.setPreferredSize(new java.awt.Dimension(300, 390));
 
         javax.swing.GroupLayout panelImgOutputLayout = new javax.swing.GroupLayout(panelImgOutput);
@@ -243,7 +243,7 @@ public class PanelGatoArnold extends javax.swing.JPanel {
                 panelImgOutput.repaint();
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "OPS! Não foi possivel carregar a imagem.");
+            JOptionPane.showMessageDialog(null, "OPS! Nao foi possivel carregar a imagem.");
         }
     }//GEN-LAST:event_selectImage
 

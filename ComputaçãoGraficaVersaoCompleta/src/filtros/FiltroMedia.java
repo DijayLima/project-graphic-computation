@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 import processamentodeimagens.Normalizacao;
 
 /**
- * Filtro de Média. Suavização de Imagens no Domínio Espacial.
+ * Filtro de Media. Suavizacao de Imagens no Dominio Espacial.
  *
  */
 public class FiltroMedia {
@@ -49,7 +49,7 @@ public class FiltroMedia {
         for (int i = 0; i < getHeight(); i++) {
             for (int j = 0; j < getWidth(); j++) {
 
-                //soma dos pixeis da vizinhança
+                //soma dos pixeis da vizinhanca
                 int soma = 0;
 
                 soma += imagem[i][j];
@@ -78,7 +78,7 @@ public class FiltroMedia {
                     soma += imagem[i + 1][j + 1] / CoeficienteDeNormalizacao;
                 }
 
-                //adiciona a soma dos valores RGB da vizinhança na posiçao central
+                //adiciona a soma dos valores RGB da vizinhanca na posicao central
                 matrizImagem[i][j] = Math.round(soma);
             }
         }

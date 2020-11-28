@@ -20,7 +20,7 @@ public class Normalizacao {
 
         for (int i = 0; i < matrizImg.length; i++) {
             for (int j = 0; j < matrizImg[0].length; j++) {
-                // Equação para normalizar pixels
+                // Equacao para normalizar pixels
                 imagem.setRGB(j, i, getCorPixel(matrizImg[i][j]));
             }
         }
@@ -51,7 +51,7 @@ public class Normalizacao {
 
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[0].length; j++) {
-                // Equação para normalizar pixels
+                // Equacao para normalizar pixels
                 matrizNomalizada[i][j] = Math.round(255 * (matriz[i][j] - fMin) / (fMax - fMin));
             }
         }
@@ -68,7 +68,7 @@ public class Normalizacao {
 
         for (int i = 0; i < matrizImg.length; i++) {
             for (int j = 0; j < matrizImg[0].length; j++) {
-                // Equação para normalizar pixels
+                // Equacao para normalizar pixels
                 imagem.setRGB(j, i, getCorPixel(matrizImg[i][j]));
             }
         }

@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 import auxiliares.Eixo;
 
 /**
- * Métodos para transformações 2D.
+ * Metodos para transformacoes 2D.
  */
 public class TransformacoesImagem {
 
@@ -38,17 +38,17 @@ public class TransformacoesImagem {
     }
 
     /**
-     * Aplica translação no objeto passado como parametro e de acordo com os
-     * fatores de translação.
+     * Aplica translacao no objeto passado como parametro e de acordo com os
+     * fatores de translacao.
      *
      * @param img
      * @param tx
      * @param ty
      */
     public void translacao(Imagem img, double tx, double ty) {
-//        // Atualiza o ponto da imagem com o valor da translação
-//         Aplica a translação usando o AffineTransform
-//        // Chama o método responsável para tratar a imagem e desenhar no plano cartesiano
+//        // Atualiza o ponto da imagem com o valor da translacao
+//         Aplica a translacao usando o AffineTransform
+//        // Chama o metodo responsavel para tratar a imagem e desenhar no plano cartesiano
 
         double[][] matrizM = new double[img.getWidth()][img.getHeight()];
         try {
@@ -106,7 +106,7 @@ public class TransformacoesImagem {
         imagem.setBufferedImage(tratarImagem(imagem));
 
         /**
-         * Aplica a translação usando o AffineTransform
+         * Aplica a translacao usando o AffineTransform
          */
         PanelPlanoCartesiano panel = PanelPlanoCartesiano.getInstance();
         Graphics2D g2d = (Graphics2D) panel.getGraphics();
@@ -152,7 +152,7 @@ public class TransformacoesImagem {
         int height = (int) fatorY;
 
         /**
-         * Aplica a translação usando o AffineTransform
+         * Aplica a translacao usando o AffineTransform
          */
         PanelPlanoCartesiano panel = PanelPlanoCartesiano.getInstance();
         Graphics2D g2d = (Graphics2D) panel.getGraphics();
@@ -171,7 +171,7 @@ public class TransformacoesImagem {
     }
 
     /**
-     * Aplica reflexão no objeto passado como parametro, de acordo com o eixo
+     * Aplica reflexao no objeto passado como parametro, de acordo com o eixo
      * escolhido
      *
      * @param imagem
@@ -213,7 +213,7 @@ public class TransformacoesImagem {
         double fatorY = imagem.getHeight() * cy;
 
         /**
-         * Aplica a translação usando o AffineTransform
+         * Aplica a translacao usando o AffineTransform
          */
         PanelPlanoCartesiano panel = PanelPlanoCartesiano.getInstance();
         Graphics2D g2d = (Graphics2D) panel.getGraphics();
@@ -229,7 +229,7 @@ public class TransformacoesImagem {
     }
 
     /**
-     * Aplica as operações compostas.
+     * Aplica as operacoes compostas.
      *
      * @param listaDeTransformacoes
      * @param matrizObjeto
@@ -251,18 +251,18 @@ public class TransformacoesImagem {
             // Atualiza matriz objeto global.
             PanelMenu2D.matrizObjeto = matrizResult;
         } catch (Exception e) {
-            System.err.println("Ocorreu um erro nas transformações compostas!");
+            System.err.println("Ocorreu um erro nas transformacoes compostas!");
         }
 
         return matrizResult;
     }
 
     /**
-     * Gera matriz de translação.
+     * Gera matriz de translacao.
      *
      * @param tx
      * @param ty
-     * @return double[][] - matriz translação.
+     * @return double[][] - matriz translacao.
      */
     public double[][] geraMatrizTranslacao(double tx, double ty) {
         double[][] matriz = new double[3][3];
@@ -310,10 +310,10 @@ public class TransformacoesImagem {
     }
 
     /**
-     * Gera matriz de rotação.
+     * Gera matriz de rotacao.
      *
      * @param angulo
-     * @return double[][] - matriz rotação.
+     * @return double[][] - matriz rotacao.
      */
     public double[][] geraMatrizRotacao(double angulo) {
         double[][] matriz = new double[3][3];
@@ -340,17 +340,17 @@ public class TransformacoesImagem {
     }
 
     /**
-     * Gera matriz de reflexão em torno do eixo passado como parametro X, Y ou
+     * Gera matriz de reflexao em torno do eixo passado como parametro X, Y ou
      * XY.
      *
-     * @return double[][] - matriz reflexão.
+     * @return double[][] - matriz reflexco.
      */
     public double[][] geraMatrizReflexao(String eixo) {
         double[][] matriz = new double[3][3];
 
         eixo = eixo.toUpperCase();
 
-        // Rotação em XY
+        // Rotacao em XY
         // Coluna 0
         matriz[0][0] = -1;
         matriz[1][0] = 0;

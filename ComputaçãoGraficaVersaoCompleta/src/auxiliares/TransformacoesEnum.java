@@ -1,11 +1,11 @@
 package auxiliares;
 
 /**
- * Mapeia os tipos de tranformações 2D/3D em objetos
+ * Mapeia os tipos de tranformacoes 2D/3D em objetos
  *
  */
 public enum TransformacoesEnum {
-    TRANSLACAO("Translação"), ESCALA("Escala"), ROTACAO("Rotação"), REFLEXAO("Reflexão"), CISALHAMENTO("Cisalhamento"), COMPOSTA("Composta");
+    TRANSLACAO("Translacao"), ESCALA("Escala"), ROTACAO("Rotacao"), REFLEXAO("Reflexao"), CISALHAMENTO("Cisalhamento"), COMPOSTA("Composta");
 
     private final String titulo;
 

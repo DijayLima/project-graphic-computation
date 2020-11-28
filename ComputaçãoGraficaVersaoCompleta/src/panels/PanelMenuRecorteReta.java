@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 import auxiliares.RasterizacaoEnum;
 
 /**
- * Representa o menu para manipulação de recorte de retas
+ * Representa o menu para manipulacao de recorte de retas
  */
 public class PanelMenuRecorteReta extends javax.swing.JPanel {
 
@@ -114,7 +114,7 @@ public class PanelMenuRecorteReta extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(240, 0));
         setPreferredSize(new java.awt.Dimension(240, 779));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Criar Janela de Visão"));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Criar Janela de Visao"));
         jPanel4.setMaximumSize(new java.awt.Dimension(220, 32767));
         jPanel4.setMinimumSize(new java.awt.Dimension(220, 0));
         jPanel4.setPreferredSize(new java.awt.Dimension(220, 106));
@@ -140,10 +140,10 @@ public class PanelMenuRecorteReta extends javax.swing.JPanel {
         yMin.setPreferredSize(new java.awt.Dimension(30, 25));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel7.setText("Ymáx");
+        jLabel7.setText("Ymax");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel8.setText("Xmáx");
+        jLabel8.setText("Xmix");
 
         xMax.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         xMax.setModel(new javax.swing.SpinnerNumberModel(200.0d, null, null, 1.0d));
@@ -396,7 +396,7 @@ public class PanelMenuRecorteReta extends javax.swing.JPanel {
     }//GEN-LAST:event_openColorChooser
 
     /**
-     * Trata o evento click do botão desenhar reta
+     * Trata o evento click do botao desenhar reta
      *
      * @param evt
      */

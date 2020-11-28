@@ -1,7 +1,7 @@
 package auxiliares;
 
 /**
- * Mapeia os tipos de tranformações em proc. de imagem
+ * Mapeia os tipos de tranformacoes em proc. de imagem
  *
  */
 public enum TransformacoesImagemEnum {
