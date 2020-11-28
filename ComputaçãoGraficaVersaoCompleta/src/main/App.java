@@ -14,6 +14,7 @@ import panels.PanelMenuRasterizacao;
 import panels.PanelMenuRecorteReta;
 import panels.PanelMenuSistemaSolar;
 import panels.PanelMenuTransformacoes;
+import panels.PanelMorfologia;
 import panels.PanelOperacoes;
 import panels.PanelPlanoCartesiano;
 import panels.PanelTranformacoes;
@@ -64,6 +65,7 @@ public class App extends javax.swing.JFrame {
     private final PanelTranformacoes panelTransformacoes;
     private final PanelHistorgrama panelHistograma;
     private final PanelGatoArnold panelArnold;
+    private final PanelMorfologia panelMorfologia;
     
 
     /**
@@ -87,6 +89,7 @@ public class App extends javax.swing.JFrame {
         panelFiltros = PanelFiltros.getInstance();
         panelOperacoes = PanelOperacoes.getInstance();
         panelTransformacoes = PanelTranformacoes.getInstance();
+        panelMorfologia = PanelMorfologia.getInstance();
 
         initComponents();
         openMenuReta(null);
@@ -593,7 +596,7 @@ public class App extends javax.swing.JFrame {
         panelMenuLeft.setVisible(true);
         panelBox.removeAll();
 
-        //changePanelCentral(panelHistograma);
+        changePanelCentral(panelMorfologia);
         changeMenuLeft(panelMenuMorfologia);
     }//GEN-LAST:event_openMenuEqualizacao
 
