@@ -8,6 +8,7 @@ import panels.PanelMenu3D;
 import panels.PanelMenuCircunferencia;
 import panels.PanelMenuFiltros;
 import panels.PanelMenuImagem;
+import panels.PanelMenuMorfologia;
 import panels.PanelMenuOperacoes;
 import panels.PanelMenuRasterizacao;
 import panels.PanelMenuRecorteReta;
@@ -35,6 +36,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import auxiliares.RasterizacaoEnum;
@@ -50,17 +53,18 @@ public class App extends javax.swing.JFrame {
     private final PanelMenuFiltros panelMenuFiltros;
     private final PanelMenuOperacoes panelMenuOperacoes;
     private final PanelMenuTransformacoes panelMenuTransformacoes;
+    private final PanelMenuMorfologia panelMenuMorfologia;
     private final PanelMenu2D panelMenu2D;
     private final PanelMenu3D panelMenu3D;
     private final PanelMenuImagem panelMenuImagem;
     private final PanelMenuSistemaSolar panelMenuSistemaSolar;
     private final PanelMenuRecorteReta panelMenuRecorteReta;
-
     private final PanelFiltros panelFiltros;
     private final PanelOperacoes panelOperacoes;
     private final PanelTranformacoes panelTransformacoes;
     private final PanelHistorgrama panelHistograma;
     private final PanelGatoArnold panelArnold;
+    
 
     /**
      * Construtor
@@ -71,6 +75,7 @@ public class App extends javax.swing.JFrame {
         panelMenuFiltros = PanelMenuFiltros.getInstance();
         panelMenuOperacoes = PanelMenuOperacoes.getInstance();
         panelMenuTransformacoes = PanelMenuTransformacoes.getInstance();
+        panelMenuMorfologia = PanelMenuMorfologia.getInstance();
         panelHistograma = PanelHistorgrama.getInstance();
         panelArnold = PanelGatoArnold.getInstance();
         panelMenu2D = PanelMenu2D.getInstance();
@@ -134,6 +139,7 @@ public class App extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        JMenuItem jMenuItem9 = new javax.swing.JMenuItem();
         menuSobre = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -420,6 +426,7 @@ public class App extends javax.swing.JFrame {
                 openMenuFiltros(evt);
             }
         });
+        
         jMenu2.add(jMenuItem1);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.SHIFT_MASK));
@@ -472,6 +479,17 @@ public class App extends javax.swing.JFrame {
         menuSobre.add(jMenuItem3);
 
         menuBar.add(menuSobre);
+        
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.SHIFT_MASK));
+        jMenuItem9.setText("Morfologia");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openMenuMorfologia(evt);
+            }
+           
+        });
+        
+        jMenu2.add(jMenuItem9);
 
 //        menuBar.add(menuSobre1);
 
@@ -569,6 +587,16 @@ public class App extends javax.swing.JFrame {
 
         changePanelCentral(panelHistograma);
     }//GEN-LAST:event_openMenuEqualizacao
+    
+    private void openMenuMorfologia(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuEqualizacao
+        panelFooter.setVisible(false);
+        panelMenuLeft.setVisible(true);
+        panelBox.removeAll();
+
+        //changePanelCentral(panelHistograma);
+        changeMenuLeft(panelMenuMorfologia);
+    }//GEN-LAST:event_openMenuEqualizacao
+
 
     private void openTrans2D(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openTrans2D
         panelMenuLeft.setVisible(true);
