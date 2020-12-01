@@ -25,6 +25,7 @@ import javax.swing.JPanel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import auxiliares.FiltrosEnum;
+import computacaografica.filtros.FiltroDilatacao;
 
 /**
  * Representa panel par aprocessar filtros em imagens
@@ -108,7 +109,7 @@ public class PanelMorfologia extends javax.swing.JPanel {
 
         lbTitle.setFont(new java.awt.Font("Tahoma", 1, 26)); // NOI18N
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTitle.setText("Filtro da Media");
+        lbTitle.setText("Morfologia");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -258,7 +259,7 @@ public class PanelMorfologia extends javax.swing.JPanel {
 
         switch (menuFiltros.getTipoAlgoritimo()) {
             case MEDIA:
-                panelImgOutput.getGraphics().drawImage(new FiltroMedia(imagemMatriz, getImgWidth(), getImgHeight()).run(), 0, 0, null);
+                panelImgOutput.getGraphics().drawImage(new FiltroDilatacao().calcula(imagemMatriz), 0, 0, null);
                 break;
             case MEDIANA:
                 panelImgOutput.getGraphics().drawImage(new FiltroMediana(imagemMatriz, getImgWidth(), getImgHeight()).run(), 0, 0, null);
