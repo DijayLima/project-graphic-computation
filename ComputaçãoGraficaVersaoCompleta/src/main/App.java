@@ -1,6 +1,7 @@
 package main;
 
 import panels.*;
+
 import retas.*;
 import sistemacoordenadas.FuncoesDeNormalizacao;
 import transformacoes.*;
@@ -8,6 +9,7 @@ import transformacoes.*;
 import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.io.File;
@@ -15,11 +17,15 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.swing.AbstractAction;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import auxiliares.RasterizacaoEnum;
+import computacaografica.MatrizTransformacaoFactory;
+import computacaografica.Transformador;
+import computacaografica.Aplicacao.ActionTransformacao;
 
 /**
  * Representa a tela inicial da aplicacao.
@@ -389,13 +395,21 @@ public class App extends javax.swing.JFrame {
         jMenu3.add(menuItem3D);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_4, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem4.setText("Imagem");
+        jMenuItem4.setText("Transformar");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openTransImagem(evt);
             }
         });
         jMenu5.add(jMenuItem4);
+        jMenu5.add(new ActionTransformacao(MatrizTransformacaoFactory.translacao(5, 5), "Transladar"));
+        jMenu5.add(new ActionTransformacao(MatrizTransformacaoFactory.escala(2, 2), "Escala maior"));
+        jMenu5.add(new ActionTransformacao(MatrizTransformacaoFactory.escala(0.5, 0.5), "Escala menor"));
+        jMenu5.add(new ActionTransformacao(MatrizTransformacaoFactory.escala(1, -1), "Espelhamento horiz."));
+        jMenu5.add(new ActionTransformacao(MatrizTransformacaoFactory.escala(-1, 1), "Espelhamento vertical"));
+        jMenu5.add(new ActionTransformacao(MatrizTransformacaoFactory.rotacao(90), "Rotação 90o"));
+        jMenu5.add(new ActionTransformacao(MatrizTransformacaoFactory.rotacao(180), "Rotação 180o"));
+
 
         menuBar.add(jMenu3);
         
@@ -988,6 +1002,32 @@ public class App extends javax.swing.JFrame {
                 labelY.setText(String.valueOf(Math.round(dcy)));
             }
         });
+    }
+    
+    private class ActionTransformacao extends AbstractAction {
+
+        /** Transformador */
+        private final Transformador transformador;
+
+        /**
+         * Cria a action
+         * 
+         * @param matriz
+         * @param string 
+         */
+        public ActionTransformacao(double[][] matriz, String string) {
+            super(string);
+            // Cria o transformador
+            transformador = new Transformador(matriz);
+        }
+        
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            // Aplica o filtro
+//            panelEdicao.setImagem(transformador.transforma(panelEdicao.getImagem()));
+            // Atualiza o painel
+            getContentPane().repaint();
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

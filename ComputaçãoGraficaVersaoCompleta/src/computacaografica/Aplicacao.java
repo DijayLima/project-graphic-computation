@@ -216,7 +216,7 @@ public class Aplicacao extends JFrame {
     /**
      * Action para transformações
      */
-    private class ActionTransformacao extends AbstractAction {
+    public class ActionTransformacao extends AbstractAction {
 
         /** Transformador */
         private final Transformador transformador;
