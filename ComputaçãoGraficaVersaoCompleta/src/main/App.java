@@ -20,6 +20,7 @@ import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import auxiliares.RasterizacaoEnum;
@@ -122,6 +123,7 @@ public class App extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
@@ -131,6 +133,7 @@ public class App extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         menuSobre1 = new javax.swing.JMenu();
+        jOptionPane = new javax.swing.JOptionPane();
         
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -489,6 +492,17 @@ public class App extends javax.swing.JFrame {
         menuBar.add(jMenu7);
         
         jMenu8.setText("Sobre");
+        
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK));
+        jMenuItem9.setText("Sobre");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	JOptionPane.showMessageDialog(panelBox, "Desenvolvedores:\nJoão Emanuel\nDijay Lima\nPedro Farias", "Sobre", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
+        
+        jMenu8.add(jMenuItem9);
+        
         menuBar.add(jMenu8);
 
         setJMenuBar(menuBar);
@@ -1058,6 +1072,7 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JLabel labelDCX;
     private javax.swing.JLabel labelDCY;
     private javax.swing.JLabel labelNDCX;
@@ -1076,6 +1091,7 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JPanel panelBox;
     private javax.swing.JPanel panelFooter;
     private javax.swing.JPanel panelMenuLeft;
+    private javax.swing.JOptionPane jOptionPane;
     private static javax.swing.JPanel panelPlanoCartesiano;
     // End of variables declaration//GEN-END:variables
 }
