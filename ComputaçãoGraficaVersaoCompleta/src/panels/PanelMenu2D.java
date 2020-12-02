@@ -240,7 +240,7 @@ public final class PanelMenu2D extends javax.swing.JPanel {
                 .addComponent(rbCisalhamento))
         );
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cor do Objeto"));
+        //jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cor do Objeto"));
 
         panelCor.setBackground(java.awt.Color.blue);
         panelCor.setToolTipText("Click para selecionar uma nova cor");
@@ -249,6 +249,8 @@ public final class PanelMenu2D extends javax.swing.JPanel {
                 openColorChooser(evt);
             }
         });
+        
+        panelCor.setVisible(false);
 
         javax.swing.GroupLayout panelCorLayout = new javax.swing.GroupLayout(panelCor);
         panelCor.setLayout(panelCorLayout);

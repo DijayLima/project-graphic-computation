@@ -267,7 +267,7 @@ public class PanelMenuRasterizacao extends javax.swing.JPanel {
         textAreaResult.setColumns(20);
         textAreaResult.setRows(5);
         textAreaResult.setText("Desenvolvido por: \nDijay Lima \nJoao Emanuel\nPedro Henrique");
-        jScrollPane1.setViewportView(textAreaResult);
+        ///jScrollPane1.setViewportView(textAreaResult);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

@@ -196,7 +196,7 @@ public class PanelMenuCircunferencia extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cor da Circunferencia"));
+        //jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cor da Circunferencia"));
 
         panelCor.setBackground(java.awt.Color.blue);
         panelCor.setToolTipText("Click para selecionar uma nova cor");
@@ -205,6 +205,8 @@ public class PanelMenuCircunferencia extends javax.swing.JPanel {
                 openColorChooser(evt);
             }
         });
+        
+        panelCor.setVisible(false);
 
         javax.swing.GroupLayout panelCorLayout = new javax.swing.GroupLayout(panelCor);
         panelCor.setLayout(panelCorLayout);

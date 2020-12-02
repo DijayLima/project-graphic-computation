@@ -235,7 +235,7 @@ public final class PanelMenu3D extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cor do Objeto"));
+        //jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cor do Objeto"));
 
         panelCor.setBackground(new java.awt.Color(68, 155, 45));
         panelCor.setToolTipText("Click para selecionar uma nova cor");
@@ -244,6 +244,8 @@ public final class PanelMenu3D extends javax.swing.JPanel {
                 panelCoropenColorChooser(evt);
             }
         });
+        
+        panelCor.setVisible(false);
 
         javax.swing.GroupLayout panelCorLayout = new javax.swing.GroupLayout(panelCor);
         panelCor.setLayout(panelCorLayout);

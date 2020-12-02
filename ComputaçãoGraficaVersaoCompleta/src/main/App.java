@@ -1,32 +1,9 @@
 package main;
 
-import panels.PanelFiltros;
-import panels.PanelGatoArnold;
-import panels.PanelHistorgrama;
-import panels.PanelMenu2D;
-import panels.PanelMenu3D;
-import panels.PanelMenuCircunferencia;
-import panels.PanelMenuFiltros;
-import panels.PanelMenuImagem;
-import panels.PanelMenuMorfologia;
-import panels.PanelMenuOperacoes;
-import panels.PanelMenuRasterizacao;
-import panels.PanelMenuRecorteReta;
-import panels.PanelMenuSistemaSolar;
-import panels.PanelMenuTransformacoes;
-import panels.PanelMorfologia;
-import panels.PanelOperacoes;
-import panels.PanelPlanoCartesiano;
-import panels.PanelTranformacoes;
-import retas.Circunferencia;
-import retas.Rasterizacao;
+import panels.*;
+import retas.*;
 import sistemacoordenadas.FuncoesDeNormalizacao;
-import transformacoes.Imagem;
-import transformacoes.Matriz;
-import transformacoes.SistemaSolar;
-import transformacoes.Transformacoes2D;
-import transformacoes.Transformacoes3D;
-import transformacoes.TransformacoesImagem;
+import transformacoes.*;
 
 import java.awt.Component;
 import java.awt.GridLayout;
@@ -38,6 +15,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
@@ -54,7 +32,6 @@ public class App extends javax.swing.JFrame {
     private final PanelMenuFiltros panelMenuFiltros;
     private final PanelMenuOperacoes panelMenuOperacoes;
     private final PanelMenuTransformacoes panelMenuTransformacoes;
-    private final PanelMenuMorfologia panelMenuMorfologia;
     private final PanelMenu2D panelMenu2D;
     private final PanelMenu3D panelMenu3D;
     private final PanelMenuImagem panelMenuImagem;
@@ -65,7 +42,6 @@ public class App extends javax.swing.JFrame {
     private final PanelTranformacoes panelTransformacoes;
     private final PanelHistorgrama panelHistograma;
     private final PanelGatoArnold panelArnold;
-    private final PanelMorfologia panelMorfologia;
     
 
     /**
@@ -77,7 +53,6 @@ public class App extends javax.swing.JFrame {
         panelMenuFiltros = PanelMenuFiltros.getInstance();
         panelMenuOperacoes = PanelMenuOperacoes.getInstance();
         panelMenuTransformacoes = PanelMenuTransformacoes.getInstance();
-        panelMenuMorfologia = PanelMenuMorfologia.getInstance();
         panelHistograma = PanelHistorgrama.getInstance();
         panelArnold = PanelGatoArnold.getInstance();
         panelMenu2D = PanelMenu2D.getInstance();
@@ -89,7 +64,6 @@ public class App extends javax.swing.JFrame {
         panelFiltros = PanelFiltros.getInstance();
         panelOperacoes = PanelOperacoes.getInstance();
         panelTransformacoes = PanelTranformacoes.getInstance();
-        panelMorfologia = PanelMorfologia.getInstance();
 
         initComponents();
         openMenuReta(null);
@@ -142,11 +116,16 @@ public class App extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
-        JMenuItem jMenuItem9 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
         menuSobre = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         menuSobre1 = new javax.swing.JMenu();
+        
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Computacao Grafica - UEPB");
@@ -358,7 +337,7 @@ public class App extends javax.swing.JFrame {
 
         menuBar.setPreferredSize(new java.awt.Dimension(104, 40));
 
-        jMenu1.setText("Desenhar");
+        jMenu1.setText("Q1 - CG | ");
 
         menuItemReta.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK));
         menuItemReta.setText("Reta");
@@ -367,7 +346,7 @@ public class App extends javax.swing.JFrame {
                 openMenuReta(evt);
             }
         });
-        jMenu1.add(menuItemReta);
+        jMenu1.add(menuItemReta);        
 
         menuItemCircuferencia.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK));
         menuItemCircuferencia.setText("Circuferencia");
@@ -385,11 +364,11 @@ public class App extends javax.swing.JFrame {
                 menuRecorteReta(evt);
             }
         });
-        jMenu1.add(menuRecorte);
+        jMenu3.add(menuRecorte);
 
         menuBar.add(jMenu1);
 
-        jMenu3.setText("Transformacoes");
+        jMenu3.setText("Q3 - CG | ");
 
         menuItem2D.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.SHIFT_MASK));
         menuItem2D.setText("2D");
@@ -416,11 +395,12 @@ public class App extends javax.swing.JFrame {
                 openTransImagem(evt);
             }
         });
-        jMenu3.add(jMenuItem4);
+        jMenu5.add(jMenuItem4);
 
         menuBar.add(jMenu3);
-
-        jMenu2.setText("Processamento de Imagens");
+        
+        jMenu5.setText("Q4 - CG | ");
+        menuBar.add(jMenu5);
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem1.setText("Filtros");
@@ -448,7 +428,7 @@ public class App extends javax.swing.JFrame {
                 openMenuArnold(evt);
             }
         });
-        jMenu2.add(jMenuItem6);
+        jMenu4.add(jMenuItem6);
 
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem7.setText("Transformacao");
@@ -457,7 +437,7 @@ public class App extends javax.swing.JFrame {
                 openMenuTransformacoes(evt);
             }
         });
-        jMenu2.add(jMenuItem7);
+        jMenu6.add(jMenuItem7);
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem8.setText("Equalizacao/Histograma");
@@ -466,11 +446,13 @@ public class App extends javax.swing.JFrame {
                 openMenuEqualizacao(evt);
             }
         });
-        jMenu2.add(jMenuItem8);
+        jMenu7.add(jMenuItem8);
+        
+        jMenu4.setText("Q5 - CG | ");
+        
+        menuBar.add(jMenu4);
 
-        menuBar.add(jMenu2);
-
-        menuSobre.setText("Outros");
+        menuSobre.setText("Q6 - CG | ");
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem3.setText("Sistema Solar");
@@ -483,18 +465,17 @@ public class App extends javax.swing.JFrame {
 
         menuBar.add(menuSobre);
         
-        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem9.setText("Morfologia");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openMenuMorfologia(evt);
-            }
-           
-        });
+        jMenu2.setText("Q1 - PI | ");
+        menuBar.add(jMenu2);
         
-        jMenu2.add(jMenuItem9);
-
-//        menuBar.add(menuSobre1);
+        jMenu6.setText("Q3 - PI | ");
+        menuBar.add(jMenu6);
+        
+        jMenu7.setText("Q4 - PI | ");
+        menuBar.add(jMenu7);
+        
+        jMenu8.setText("Sobre");
+        menuBar.add(jMenu8);
 
         setJMenuBar(menuBar);
 
@@ -590,16 +571,6 @@ public class App extends javax.swing.JFrame {
 
         changePanelCentral(panelHistograma);
     }//GEN-LAST:event_openMenuEqualizacao
-    
-    private void openMenuMorfologia(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuEqualizacao
-        panelFooter.setVisible(false);
-        panelMenuLeft.setVisible(true);
-        panelBox.removeAll();
-
-        changePanelCentral(panelMorfologia);
-        changeMenuLeft(panelMenuMorfologia);
-    }//GEN-LAST:event_openMenuEqualizacao
-
 
     private void openTrans2D(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openTrans2D
         panelMenuLeft.setVisible(true);
@@ -1034,6 +1005,11 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;

@@ -280,7 +280,7 @@ public class PanelMenuRecorteReta extends javax.swing.JPanel {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cor da Reta"));
+        // jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cor da Reta"));
 
         panelCor.setBackground(new java.awt.Color(213, 33, 33));
         panelCor.setToolTipText("Click para selecionar uma nova cor");
@@ -289,6 +289,8 @@ public class PanelMenuRecorteReta extends javax.swing.JPanel {
                 openColorChooser(evt);
             }
         });
+        
+        panelCor.setVisible(false);
 
         javax.swing.GroupLayout panelCorLayout = new javax.swing.GroupLayout(panelCor);
         panelCor.setLayout(panelCorLayout);
