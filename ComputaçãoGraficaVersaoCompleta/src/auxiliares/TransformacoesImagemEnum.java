@@ -5,7 +5,7 @@ package auxiliares;
  *
  */
 public enum TransformacoesImagemEnum {
-    NEGATIVO("Negativo"), GAMMA("Gamma"), LOG("Logaritmo");
+    NEGATIVO("Negativo"), GAMMA("Gamma"), LOG("Logaritmo"), INTGERA("Intensidade Geral");
 
     private final String titulo;
 

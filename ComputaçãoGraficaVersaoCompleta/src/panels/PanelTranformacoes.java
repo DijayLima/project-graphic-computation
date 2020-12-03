@@ -18,6 +18,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import processamentodeimagens.Gamma;
 import processamentodeimagens.Logaritmo;
 import processamentodeimagens.Negativo;
+import processamentodeimagens.IntensidadeGeral;
 
 public class PanelTranformacoes extends javax.swing.JPanel {
 
@@ -254,6 +255,9 @@ public class PanelTranformacoes extends javax.swing.JPanel {
                 break;
             case LOG:
                 panelImgOutput.getGraphics().drawImage(new Logaritmo(imagemMatriz, getImgWidth(), getImgHeight(), menuTransformacoes.getDados()).run(), 0, 0, null);
+                break;
+            case INTGERA:
+            	panelImgOutput.getGraphics().drawImage(new IntensidadeGeral(imagemMatriz, getImgWidth(), getImgHeight(), menuTransformacoes.getDadosW(), menuTransformacoes.getDadosLargura()).run(), 0, 0, null);
                 break;
             default:
                 break;

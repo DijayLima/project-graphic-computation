@@ -32,7 +32,8 @@ public class PanelCoracao {
 
 	 public void start() throws Exception {
 		 
-	        URL url = new URL("http://i.stack.imgur.com/i8UJD.jpg");
+	       // URL url = new URL("http://i.stack.imgur.com/i8UJD.jpg");
+	        URL url = new URL("https://media.istockphoto.com/vectors/heart-rate-graph-heart-beat-ekg-icon-wave-black-and-white-color-stock-vector-id1269926697");
 	        final BufferedImage bi = ImageIO.read(url);
 	        Runnable r = new Runnable() {
 
