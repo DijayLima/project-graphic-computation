@@ -49,6 +49,7 @@ public class App extends javax.swing.JFrame {
     private final PanelTranformacoes panelTransformacoes;
     private final PanelHistorgrama panelHistograma;
     private final PanelGatoArnold panelArnold;
+    private final PanelCoracao panelCoracao;
     
 
     /**
@@ -71,6 +72,7 @@ public class App extends javax.swing.JFrame {
         panelFiltros = PanelFiltros.getInstance();
         panelOperacoes = PanelOperacoes.getInstance();
         panelTransformacoes = PanelTranformacoes.getInstance();
+        panelCoracao = new PanelCoracao();
 
         initComponents();
         openMenuReta(null);
@@ -129,11 +131,14 @@ public class App extends javax.swing.JFrame {
         jMenu6 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem10 = new javax.swing.JMenuItem();
         menuSobre = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         menuSobre1 = new javax.swing.JMenu();
         jOptionPane = new javax.swing.JOptionPane();
+        
         
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -355,7 +360,9 @@ public class App extends javax.swing.JFrame {
                 openMenuReta(evt);
             }
         });
-        jMenu1.add(menuItemReta);        
+        jMenu1.add(menuItemReta); 
+        
+        
 
         menuItemCircuferencia.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK));
         menuItemCircuferencia.setText("Circuferencia");
@@ -376,6 +383,25 @@ public class App extends javax.swing.JFrame {
         jMenu3.add(menuRecorte);
 
         menuBar.add(jMenu1);
+        
+        jMenu9.setText("Q2 - CG | ");
+        
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.SHIFT_MASK));
+        jMenuItem10.setText("Coracao");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	try {
+					panelCoracao.start();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            }
+        });
+        jMenu9.add(jMenuItem10);
+        
+        
+        menuBar.add(jMenu9);
 
         jMenu3.setText("Q3 - CG | ");
 
@@ -1064,6 +1090,7 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
@@ -1073,6 +1100,7 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JLabel labelDCX;
     private javax.swing.JLabel labelDCY;
     private javax.swing.JLabel labelNDCX;
