@@ -1,15 +1,38 @@
 package main;
 
-import panels.*;
-
-import retas.*;
+import panels.PanelFiltros;
+import panels.PanelGatoArnold;
+import panels.PanelHistorgrama;
+import panels.PanelMenu2D;
+import panels.PanelMenu3D;
+import panels.PanelMenuCircunferencia;
+import panels.PanelMenuFiltros;
+import panels.PanelMenuImagem;
+import panels.PanelMenuOperacoes;
+import panels.PanelMenuRasterizacao;
+import panels.PanelMenuRecorteReta;
+import panels.PanelMenuTransformacoes;
+import panels.PanelMenuRecorteReta;
+//import panels.PanelMenuSistemaSolar;
+//import panels.PanelMenuTransformacoes;
+import panels.PanelOperacoes;
+import panels.PanelPlanoCartesiano;
+import panels.PanelTranformacoes;
+import retas.Rasterizacao;
 import sistemacoordenadas.FuncoesDeNormalizacao;
-import transformacoes.*;
+import transformacoes.Imagem;
+import transformacoes.Matriz;
+import transformacoes.SistemaSolar;
+import transformacoes.Transformacoes2D;
+import transformacoes.Transformacoes3D;
+import transformacoes.TransformacoesImagem;
 
 import java.awt.Component;
+import java.awt.EventQueue;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.io.File;
@@ -17,24 +40,22 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.AbstractAction;
-import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import auxiliares.RasterizacaoEnum;
-import computacaografica.MatrizTransformacaoFactory;
-import computacaografica.Transformador;
-import computacaografica.Aplicacao.ActionTransformacao;
+import circunferencia.Circunferencia;
 
 /**
- * Representa a tela inicial da aplicacao.
+ * Representa a tela inicial da aplicação.
  *
  */
 public class App extends javax.swing.JFrame {
 
-    private final PanelMenuRasterizacao panelMenuRasterizacao;
+	private static final long serialVersionUID = 1L;
+
+	private final PanelMenuRasterizacao panelMenuRasterizacao;
     private final PanelMenuCircunferencia panelMenuCircunferencia;
     private final PanelMenuFiltros panelMenuFiltros;
     private final PanelMenuOperacoes panelMenuOperacoes;
@@ -42,14 +63,13 @@ public class App extends javax.swing.JFrame {
     private final PanelMenu2D panelMenu2D;
     private final PanelMenu3D panelMenu3D;
     private final PanelMenuImagem panelMenuImagem;
-    private final PanelMenuSistemaSolar panelMenuSistemaSolar;
     private final PanelMenuRecorteReta panelMenuRecorteReta;
+
     private final PanelFiltros panelFiltros;
     private final PanelOperacoes panelOperacoes;
     private final PanelTranformacoes panelTransformacoes;
     private final PanelHistorgrama panelHistograma;
     private final PanelGatoArnold panelArnold;
-    
 
     /**
      * Construtor
@@ -65,7 +85,6 @@ public class App extends javax.swing.JFrame {
         panelMenu2D = PanelMenu2D.getInstance();
         panelMenu3D = PanelMenu3D.getInstance();
         panelMenuImagem = PanelMenuImagem.getInstance();
-        panelMenuSistemaSolar = PanelMenuSistemaSolar.getInstance();
         panelMenuRecorteReta = PanelMenuRecorteReta.getInstance();
 
         panelFiltros = PanelFiltros.getInstance();
@@ -84,7 +103,8 @@ public class App extends javax.swing.JFrame {
      */
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    @SuppressWarnings("deprecation")
+	private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
@@ -107,7 +127,6 @@ public class App extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         labelY = new javax.swing.JLabel();
         panelPlanoCartesiano = panels.PanelPlanoCartesiano.getInstance();
-        labelResTela = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         menuItemReta = new javax.swing.JMenuItem();
@@ -123,30 +142,16 @@ public class App extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu8 = new javax.swing.JMenu();
+        JMenuItem jMenuItem9 = new javax.swing.JMenuItem();
         menuSobre = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        menuSobre1 = new javax.swing.JMenu();
-        jOptionPane = new javax.swing.JOptionPane();
-        
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Computacao Grafica - UEPB");
+        setTitle("Projeto Computação Gráfica");
         setExtendedState(6);
-      //  setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagensAsserts/NovoLogo.png")));
         setMinimumSize(new java.awt.Dimension(1080, 720));
         setName("framePrincipal"); // NOI18N
-        addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentResized(java.awt.event.ComponentEvent evt) {
-                actionResized(evt);
-            }
-        });
+        
 
         panelMenuLeft.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panelMenuLeft.setMinimumSize(new java.awt.Dimension(240, 0));
@@ -167,7 +172,7 @@ public class App extends javax.swing.JFrame {
         panelFooter.setMinimumSize(new java.awt.Dimension(170, 100));
         panelFooter.setPreferredSize(new java.awt.Dimension(170, 327));
 
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setBackground(new java.awt.Color(34, 139, 34));
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -176,20 +181,21 @@ public class App extends javax.swing.JFrame {
         jLabel3.setOpaque(true);
         jLabel3.setPreferredSize(new java.awt.Dimension(170, 54));
 
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setBackground(new java.awt.Color(255, 215, 0));
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel4.setBackground(new java.awt.Color(0,0,0));
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("<html><h3 align=\"center\">Coordenadas<br/>de Saida</h3></html>");
+        jLabel4.setText("<html><h3 align=\"center\">Coordenadas<br/>de Saída</h3></html>");
         jLabel4.setMinimumSize(new java.awt.Dimension(170, 54));
         jLabel4.setOpaque(true);
         jLabel4.setPreferredSize(new java.awt.Dimension(170, 54));
 
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setBackground(new java.awt.Color(0, 0, 255));
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("<html><h3 align=\"center\">Coordenadas<br/>de Normalizacao</h3></html>");
+        jLabel5.setText("<html><h3 align=\"center\">Coordenadas<br/>de Normalização</h3></html>");
         jLabel5.setMinimumSize(new java.awt.Dimension(170, 54));
         jLabel5.setOpaque(true);
         jLabel5.setPreferredSize(new java.awt.Dimension(170, 54));
@@ -308,26 +314,8 @@ public class App extends javax.swing.JFrame {
         panelPlanoCartesiano.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panelPlanoCartesiano.setPreferredSize(new java.awt.Dimension(550, 550));
 
-        labelResTela.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        labelResTela.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        labelResTela.setText("Tela: 1920 X 1080");
-
         javax.swing.GroupLayout panelPlanoCartesianoLayout = new javax.swing.GroupLayout(panelPlanoCartesiano);
         panelPlanoCartesiano.setLayout(panelPlanoCartesianoLayout);
-        panelPlanoCartesianoLayout.setHorizontalGroup(
-            panelPlanoCartesianoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPlanoCartesianoLayout.createSequentialGroup()
-                .addGap(484, 484, 484)
-                .addComponent(labelResTela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        panelPlanoCartesianoLayout.setVerticalGroup(
-            panelPlanoCartesianoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPlanoCartesianoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelResTela)
-                .addContainerGap())
-        );
 
         javax.swing.GroupLayout panelBoxLayout = new javax.swing.GroupLayout(panelBox);
         panelBox.setLayout(panelBoxLayout);
@@ -346,7 +334,7 @@ public class App extends javax.swing.JFrame {
 
         menuBar.setPreferredSize(new java.awt.Dimension(104, 40));
 
-        jMenu1.setText("Q1 - CG | ");
+        jMenu1.setText("Desenhar");
 
         menuItemReta.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK));
         menuItemReta.setText("Reta");
@@ -355,10 +343,10 @@ public class App extends javax.swing.JFrame {
                 openMenuReta(evt);
             }
         });
-        jMenu1.add(menuItemReta);        
+        jMenu1.add(menuItemReta);
 
         menuItemCircuferencia.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK));
-        menuItemCircuferencia.setText("Circuferencia");
+        menuItemCircuferencia.setText("Circuferência");
         menuItemCircuferencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openMenuCircunferencia(evt);
@@ -373,11 +361,11 @@ public class App extends javax.swing.JFrame {
                 menuRecorteReta(evt);
             }
         });
-        jMenu3.add(menuRecorte);
+        jMenu1.add(menuRecorte);
 
         menuBar.add(jMenu1);
 
-        jMenu3.setText("Q3 - CG | ");
+        jMenu3.setText("Transformações");
 
         menuItem2D.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.SHIFT_MASK));
         menuItem2D.setText("2D");
@@ -398,26 +386,17 @@ public class App extends javax.swing.JFrame {
         jMenu3.add(menuItem3D);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_4, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem4.setText("Transformar");
+        jMenuItem4.setText("Imagem");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openTransImagem(evt);
             }
         });
-        jMenu5.add(jMenuItem4);
-        jMenu5.add(new ActionTransformacao(MatrizTransformacaoFactory.translacao(5, 5), "Transladar"));
-        jMenu5.add(new ActionTransformacao(MatrizTransformacaoFactory.escala(2, 2), "Escala maior"));
-        jMenu5.add(new ActionTransformacao(MatrizTransformacaoFactory.escala(0.5, 0.5), "Escala menor"));
-        jMenu5.add(new ActionTransformacao(MatrizTransformacaoFactory.escala(1, -1), "Espelhamento horiz."));
-        jMenu5.add(new ActionTransformacao(MatrizTransformacaoFactory.escala(-1, 1), "Espelhamento vertical"));
-        jMenu5.add(new ActionTransformacao(MatrizTransformacaoFactory.rotacao(90), "RotaÃ§Ã£o 90o"));
-        jMenu5.add(new ActionTransformacao(MatrizTransformacaoFactory.rotacao(180), "RotaÃ§Ã£o 180o"));
-
+        jMenu3.add(jMenuItem4);
 
         menuBar.add(jMenu3);
-        
-        jMenu5.setText("Q4 - CG | ");
-//        menuBar.add(jMenu5);
+
+        jMenu2.setText("Processamento de Imagens");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem1.setText("Filtros");
@@ -426,11 +405,10 @@ public class App extends javax.swing.JFrame {
                 openMenuFiltros(evt);
             }
         });
-        
         jMenu2.add(jMenuItem1);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem5.setText("Operacoes");
+        jMenuItem5.setText("Operações");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openMenuOperacoes(evt);
@@ -445,65 +423,65 @@ public class App extends javax.swing.JFrame {
                 openMenuArnold(evt);
             }
         });
-        jMenu4.add(jMenuItem6);
+        jMenu2.add(jMenuItem6);
 
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem7.setText("Transformacao");
+        jMenuItem7.setText("Transformação");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openMenuTransformacoes(evt);
             }
         });
-        jMenu6.add(jMenuItem7);
+        jMenu2.add(jMenuItem7);
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem8.setText("Equalizacao/Histograma");
+        jMenuItem8.setText("Equalização/Histograma");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openMenuEqualizacao(evt);
             }
         });
-        jMenu7.add(jMenuItem8);
-        
-        jMenu4.setText("Q5 - CG | ");
-        
-        menuBar.add(jMenu4);
+        jMenu2.add(jMenuItem8);
 
-        menuSobre.setText("Q6 - CG | ");
-
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem3.setText("Sistema Solar");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.SHIFT_MASK));
+        jMenuItem9.setText("Morfologia");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openSistemaSolar(evt);
+                openMenuEqualizacao(evt);
             }
         });
-        menuSobre.add(jMenuItem3);
+        
+		jMenu2.add(jMenuItem9);
+
+        menuBar.add(jMenu2);
+
+        menuSobre.setText("Sobre");
+
 
         menuBar.add(menuSobre);
         
-        jMenu2.setText("Q1 - PI | ");
-        menuBar.add(jMenu2);
-        
-        jMenu6.setText("Q3 - PI | ");
-        menuBar.add(jMenu6);
-        
-        jMenu7.setText("Q4 - PI | ");
-        menuBar.add(jMenu7);
-        
-        jMenu8.setText("Sobre");
-        
-        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem9.setText("Sobre");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	JOptionPane.showMessageDialog(panelBox, "Desenvolvedores:\nJoÃ£o Emanuel\nDijay Lima\nPedro Farias", "Sobre", JOptionPane.INFORMATION_MESSAGE);
-            }
-        });
-        
-        jMenu8.add(jMenuItem9);
-        
-        menuBar.add(jMenu8);
+        JMenuItem equipeMenuItem = new JMenuItem("Equipe");
+		menuSobre.add(equipeMenuItem);
+		
+		equipeMenuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				EventQueue.invokeLater(new Runnable() {
+					@Override
+					public void run() {
+						try {
+							JOptionPane.showMessageDialog(null, "Adrielly de Medeiros Santos - 171080190\n"
+															+ "Carlos Eduardo Henrique Lacerda - 162080247 \n"
+															+ "João Vitor Barbosa Rodrigues - 171080",
+									"EQUIPE", JOptionPane.INFORMATION_MESSAGE);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
 
         setJMenuBar(menuBar);
 
@@ -556,7 +534,7 @@ public class App extends javax.swing.JFrame {
 
     private void openMenuFiltros(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuFiltros
         /**
-         * Removendo os panels que nao serao utilizados
+         * Removendo os panels que não serïão utilizados
          */
         panelFooter.setVisible(false);
         panelMenuLeft.setVisible(true);
@@ -624,31 +602,6 @@ public class App extends javax.swing.JFrame {
         changeMenuLeft(panelMenu3D);
     }//GEN-LAST:event_openTrans3D
 
-
-    private void openSistemaSolar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openSistemaSolar
-        panelMenuLeft.setVisible(true);
-
-        if (!panelFooter.isValid()) {
-            setDefaultBox();
-        }
-        changeMenuLeft(panelMenuSistemaSolar);
-
-        SistemaSolar sistemaSolar = new SistemaSolar();
-        if (SistemaSolar.threadAnimation != null) {
-            SistemaSolar.threadAnimation.stop();
-        }
-        sistemaSolar.startAnimation();
-    }//GEN-LAST:event_openSistemaSolar
-
-    /**
-     * Evento disparado toda vez que a tela e redimensinada. Seta a resolucao da
-     * tela atual.
-     *
-     */
-    private void actionResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_actionResized
-        PanelPlanoCartesiano p = PanelPlanoCartesiano.getInstance();
-        labelResTela.setText("Tela: " + p.getLargura() + " X " + p.getAltura());
-    }//GEN-LAST:event_actionResized
 
     private void openTransImagem(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openTransImagem
         try {
@@ -738,11 +691,6 @@ public class App extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Windows".equals(info.getName())) {
@@ -770,7 +718,7 @@ public class App extends javax.swing.JFrame {
     }
 
     /**
-     * Executa o algoritmo de rasterizacao da reta
+     * Executa o algoritmo de rasterização da reta
      *
      * @param instance Instancia do PanelMenu que o chamou
      */
@@ -789,7 +737,7 @@ public class App extends javax.swing.JFrame {
     }
 
     /**
-     * Processa o pedido vindo da tela de rasterizacao de reta.
+     * Processa o pedido vindo da tela de rasterização de reta.
      *
      * @param menu
      */
@@ -805,7 +753,7 @@ public class App extends javax.swing.JFrame {
     }
 
     /**
-     * Processa o pedido vindo da tela de rasterizacao de circunferencia.
+     * Processa o pedido vindo da tela de rasterização de circunferência.
      *
      * @param menu - Possui o getRaio, getColor, getTipoAlgoritimo
      */
@@ -830,7 +778,7 @@ public class App extends javax.swing.JFrame {
     }
 
     /**
-     * Processa o pedido vindo da tela de transformacoes 2D.
+     * Processa o pedido vindo da tela de transformações 2D.
      *
      * @param menu
      */
@@ -839,19 +787,20 @@ public class App extends javax.swing.JFrame {
             Transformacoes2D trans2D = Transformacoes2D.getInstance();
 
             /**
-             * Matriz objeto original. Ela e atualizada em cada transformacao
+             * Matriz objeto original. Ela é atualizada em cada transformação
              * aplicada.
              */
             double[][] matrizObjeto = PanelMenu2D.matrizObjeto;
 
             /**
-             * Fatores de translacao.
+             * Fatores de translação.
              */
-            double tx = PanelMenu2D.matrizObjeto[0][0], ty = PanelMenu2D.matrizObjeto[1][0];
+            double tx = PanelMenu2D.matrizObjeto[0][0];
+            double ty = PanelMenu2D.matrizObjeto[1][0];
 
             switch (menu.getTipoAlgoritimo()) {
                 case TRANSLACAO:
-                    // Aplica translacao
+                    // Aplica translação
                     matrizObjeto = trans2D.translacao(matrizObjeto, menu.getValorX(), menu.getValorY());
                     break;
                 case ESCALA:
@@ -859,11 +808,11 @@ public class App extends javax.swing.JFrame {
                     matrizObjeto = trans2D.escala(matrizObjeto, menu.getValorX(), menu.getValorY());
                     break;
                 case ROTACAO:
-                    // Aplica rotacao de acordo com o angulo
+                    // Aplica rotação de acordo com o ângulo
                     matrizObjeto = trans2D.rotacao(matrizObjeto, menu.getAngulo());
                     break;
                 case REFLEXAO:
-                    // Aplica reflexao de acordo com o eixo selecionado
+                    // Aplica reflexão de acordo com o eixo selecionado
                     matrizObjeto = trans2D.reflexao(matrizObjeto, menu.getEixo());
                     break;
                 case CISALHAMENTO:
@@ -883,7 +832,7 @@ public class App extends javax.swing.JFrame {
     }
 
     /**
-     * Processa o pedido vindo da tela de transformacoes 3D.
+     * Processa o pedido vindo da tela de transformações 3D.
      *
      * @param menu
      */
@@ -892,19 +841,20 @@ public class App extends javax.swing.JFrame {
             Transformacoes3D trans3D = Transformacoes3D.getInstance();
 
             /**
-             * Matriz objeto original. Ela e atualizada em cada transformacao
+             * Matriz objeto original. Ela é atualizada em cada transformação
              * aplicada.
              */
             double[][] matrizObjeto3D = PanelMenu3D.matrizObjeto3D;
 
             /**
-             * Fatores de translacao.
+             * Fatores de translação.
              */
-            double tx = PanelMenu3D.matrizObjeto3D[0][0], ty = PanelMenu3D.matrizObjeto3D[1][0];
+            double tx = PanelMenu3D.matrizObjeto3D[0][0];
+            double ty = PanelMenu3D.matrizObjeto3D[1][0];
 
             switch (menu.getTipoAlgoritimo()) {
                 case TRANSLACAO:
-                    // Aplica translacao
+                    // Aplica translação
                     matrizObjeto3D = trans3D.translacao(matrizObjeto3D, menu.getValorX(), menu.getValorY(), menu.getValorZ());
                     break;
                 case ESCALA:
@@ -912,11 +862,11 @@ public class App extends javax.swing.JFrame {
                     matrizObjeto3D = trans3D.escala(matrizObjeto3D, menu.getValorX(), menu.getValorY(), menu.getValorZ());
                     break;
                 case ROTACAO:
-                    // Aplica rotacao de acordo com o angulo
+                    // Aplica rotação de acordo com o ângulo
                     matrizObjeto3D = trans3D.rotacao(matrizObjeto3D, menu.getAngulo(), menu.getEixo());
                     break;
                 case REFLEXAO:
-                    // Aplica reflexao de acordo com o eixo selecionado
+                    // Aplica reflexão de acordo com o eixo selecionado
                     matrizObjeto3D = trans3D.reflexao(matrizObjeto3D, menu.getEixo());
                     break;
                 case CISALHAMENTO:
@@ -939,7 +889,7 @@ public class App extends javax.swing.JFrame {
     }
 
     /**
-     * Processa o pedido vindo da tela de transformacoes 2D.
+     * Processa o pedido vindo da tela de transformações 2D.
      *
      * @param menu
      */
@@ -948,17 +898,17 @@ public class App extends javax.swing.JFrame {
             TransformacoesImagem transImg = TransformacoesImagem.getInstance();
 
             /**
-             * Matriz objeto original. Ela e atualizada em cada transformacao
+             * Matriz objeto original. Ela é atualizada em cada transformação
              * aplicada.
              */
             Imagem imagem = PanelMenuImagem.imagem;
 
             /**
-             * Fatores de translacao.
+             * Fatores de translação.
              */
             switch (menu.getTipoAlgoritimo()) {
                 case TRANSLACAO:
-                    // Aplica translacao
+                    // Aplica translação
                     transImg.translacao(imagem, menu.getValorX(), menu.getValorY());
                     break;
                 case ESCALA:
@@ -966,11 +916,11 @@ public class App extends javax.swing.JFrame {
                     transImg.escala(imagem, menu.getValorX(), menu.getValorY());
                     break;
                 case ROTACAO:
-                    // Aplica rotacao de acordo com o angulo
+                    // Aplica rotação de acordo com o ângulo
                     transImg.rotacao(imagem, menu.getAngulo());
                     break;
                 case REFLEXAO:
-                    // Aplica reflexao de acordo com o eixo selecionado
+                    // Aplica reflexão de acordo com o eixo selecionado
                     transImg.reflexao(imagem, menu.getEixo());
                     break;
                 case CISALHAMENTO:
@@ -994,15 +944,15 @@ public class App extends javax.swing.JFrame {
             @Override
             public void mouseMoved(MouseEvent e) {
                 super.mouseMoved(e); //To change body of generated methods, choose Tools | Templates.
-
+                
                 // Pega a instancia do Plano Cartesiano
                 PanelPlanoCartesiano planoCartesiano = PanelPlanoCartesiano.getInstance();
 
-                // Calcula o dc - Entrada de dispositivo | Sera o mesmo que a saida
+                // Calcula o dc - Entrada de dispositivo | Será o mesmo que a saída
                 int dcx = e.getX() - planoCartesiano.getValorCentroX();
                 int dcy = (e.getY() - planoCartesiano.getValorCentroY()) * -1;
 
-                // Calcula o ndc - Normalizacao do dispositivo
+                // Calcula o ndc - Normalização do dispositivo
                 float ndcx = FuncoesDeNormalizacao.calcularNDCX(planoCartesiano.getLargura(), dcx);
                 float ndcy = FuncoesDeNormalizacao.calcularNDCX(planoCartesiano.getAltura(), dcy);
 
@@ -1011,37 +961,14 @@ public class App extends javax.swing.JFrame {
 
                 labelDCX.setText(String.valueOf(FuncoesDeNormalizacao.calcularDCX(planoCartesiano.getLargura(), ndcx)));
                 labelDCY.setText(String.valueOf(FuncoesDeNormalizacao.calcularDCY(planoCartesiano.getAltura(), ndcy)));
-
-                labelX.setText(String.valueOf(Math.round(dcx)));
-                labelY.setText(String.valueOf(Math.round(dcy)));
+                
+                int x = (int) getMousePosition().getX();
+                int y = (int) getMousePosition().getY();
+                
+                labelX.setText(String.valueOf(x));
+                labelY.setText(String.valueOf(y));
             }
         });
-    }
-    
-    private class ActionTransformacao extends AbstractAction {
-
-        /** Transformador */
-        private final Transformador transformador;
-
-        /**
-         * Cria a action
-         * 
-         * @param matriz
-         * @param string 
-         */
-        public ActionTransformacao(double[][] matriz, String string) {
-            super(string);
-            // Cria o transformador
-            transformador = new Transformador(matriz);
-        }
-        
-        @Override
-        public void actionPerformed(ActionEvent ae) {
-            // Aplica o filtro
-//            panelEdicao.setImagem(transformador.transforma(panelEdicao.getImagem()));
-            // Atualiza o painel
-            getContentPane().repaint();
-        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1059,25 +986,17 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JLabel labelDCX;
     private javax.swing.JLabel labelDCY;
     private javax.swing.JLabel labelNDCX;
     private javax.swing.JLabel labelNDCY;
-    private javax.swing.JLabel labelResTela;
     private javax.swing.JLabel labelX;
     private javax.swing.JLabel labelY;
     private javax.swing.JMenuBar menuBar;
@@ -1087,11 +1006,9 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemReta;
     private javax.swing.JMenuItem menuRecorte;
     private javax.swing.JMenu menuSobre;
-    private javax.swing.JMenu menuSobre1;
     private javax.swing.JPanel panelBox;
     private javax.swing.JPanel panelFooter;
     private javax.swing.JPanel panelMenuLeft;
-    private javax.swing.JOptionPane jOptionPane;
     private static javax.swing.JPanel panelPlanoCartesiano;
     // End of variables declaration//GEN-END:variables
 }
